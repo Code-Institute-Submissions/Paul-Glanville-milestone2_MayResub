@@ -1,1 +1,74 @@
 @import url('http://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    padding: 0;
+    margin: 0;
+
+}
+.container{
+    padding-top: 15px;
+    width: 750px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-gap: 10px;
+}
+.box-one{
+    background: #bee9e8;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-two{
+    background: #62b6cb;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-three{
+    background: #1b4965;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-four{
+    background: #cae9ff;
+    border: 1px solid #000;
+    padding: 10px;
+}.box-five{
+    background: #5fa8d3;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-six{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}.box-seven{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-eight{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-nine{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-ten{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-eleven{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box-twelve{
+    background: rgb(105, 105, 91);
+    border: 1px solid #000;
+    padding: 10px;
+}
