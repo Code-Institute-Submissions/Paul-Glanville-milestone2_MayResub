@@ -14,9 +14,17 @@ function clearGame() {
 }
 function addCount() {
     game.count++;
-    $('#clickNumber').addClass('animated fadeOut');
+    $('#clickNumber').addClass('animated fadeOutDown');
 
     setTimeout(function() {
-        
-    })
+            $('#clickNumber').removeClass('fadeOutDown').html(game.count).addClass('fadeInDown');
+  }, 200);
+  
+    generateMove();
+    }
+}
+function generateMove() {
+    game.currentGame.push(game.possibilities [(math.floor(math.random()*4)
+        )]);
+        showMoves();
 }
