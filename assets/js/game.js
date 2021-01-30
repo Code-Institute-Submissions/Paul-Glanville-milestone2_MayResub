@@ -1,5 +1,22 @@
-var boxArray = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'];
-var box_value = [];
-var box_tile_ids = [];
-var tiles_saelected = 0;
+var game = {
+    count = 0;
+    possibilities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
+    currentGame = [],
+    player = [],
+}
+function newGame() {
+    clearGame();
+}
+function clearGame() {
+    game.currentGame = [];
+    game.count = 0;
+    addCount();
+}
+function addCount() {
+    game.count++;
+    $('#clickNumber').addClass('animated fadeOut');
 
+    setTimeout(function() {
+        
+    })
+}
