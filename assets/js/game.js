@@ -12,9 +12,11 @@ function clearGame() {
     game.count = 0;
 }
 
-setTimeOut(function(box) {
-    document.getElementsByClassName("box", setTimeout); <div class="box"><p>1</p></div>;_display="none";
-    2000;
-    return false;
-});
+let box = setTimeOut(function(delay, hide) {
+    function delay(){
+        hide("delay");
+    }
+    setTimeOut(box, 5000, "delay");
+};
 
+console.log(box, clearGame, newGame, game);
