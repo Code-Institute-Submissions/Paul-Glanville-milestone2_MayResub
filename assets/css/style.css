@@ -35,6 +35,13 @@ body{
     text-align: center;
     font-size: 2em;
 }
+.btn{
+    background: #62b6cb;
+    border: 1px solid #000;
+    padding: 10px;
+    position: relative;
+    font-size: 2em;
+}
 .instructions{
     padding: 30px;
     font-size: 1.5em;
