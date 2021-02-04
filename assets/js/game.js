@@ -2,7 +2,6 @@ var cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 var game = {
     count = 0;
-    possibilities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     currentGame = [],
     player = [],
 }
@@ -14,7 +13,9 @@ function clearGame() {
     game.count = 0;
 }
 
-let button = document.getElementsByTagName("p");
-    button.style.visibility = "hidden";
+var cards = document.getElementsByTagName("div").child("p");
+setTimeOut(function() {
+    console.log(cards)
+}, 2000);
 
-console.log(button);
+console.log(cards, button, game);
