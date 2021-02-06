@@ -1,10 +1,12 @@
-var cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+var cardsArray  = [];
+var MemoryCounter = 0;
+var user = [];
 var tiles
 var start = document.getElementById(btn);
 
-var updateRounds = function(){
+var updateRound = function(){
     rounds++;
-    $("showRounds").html(rounds);
+    $("showRound").html(rounds);
 }
 
 var game = {
@@ -19,15 +21,27 @@ function clearGame() {
     game.currentGame = [];
     game.count = 0;
 }
-
+$("#btn").on("click", function() {
+    let ("start" == "refresh") {
+        $("#btn").css("background-color", "red");
+        start = true;
+        user = [];
+        memory = [];
+        memoryCounter = 0;
+        userCounter = 0;
+        levelCounter = 1;
+        $(".box").html("event");
+        match = true;
+        clearInterval(startGame);
+        $(".box").css("event", "none");
+        newMemory();
+        console.log(memory);
+        setTimeOut(function() {startGame =
+            setInterval(begin, 2000);}, 2000);
+    }
+});
 
 let tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
     console.log(cards)
 }, 2000);
-
-$(".box").click(function(){
-    $(".box").html("newGame");
-});
-
-console.log(cards, button, game, start);
