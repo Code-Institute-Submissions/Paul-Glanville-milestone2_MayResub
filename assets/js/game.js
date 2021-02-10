@@ -2,8 +2,10 @@
 var cardsArray  = [];
 var MemoryCounter = 0;
 var user = [];
-var tiles = []
+var userCounter = 0;
+var tiles = [];
 var start = document.getElementById(btn);
+var levelCounter = 0;
 
 /* Round update and new game */
 var updateRound = function(){
@@ -50,7 +52,16 @@ setTimeOut(function() {
 }, 2000);
 
 /* user input to click on each box in order they are presented */
+$("div").on("click", function(){
+    if(start == "begin" && running)
+        userCounter++;
 
+    for(i = 0; i < user.length; i ++){
+        if (memory[i] != user[!]){
+            matchingArrays = false;
+        }
+    }
+})
 /*boxes/tiles are to light up when sequence is run*/
 
 /*Boxes/tiles afre to light up when clicked by the user*/
