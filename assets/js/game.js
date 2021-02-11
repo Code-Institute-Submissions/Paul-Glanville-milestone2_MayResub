@@ -1,11 +1,15 @@
 /* Must declare each variable to begin with also as a reminder of what the variable names are*/
 var cardsArray  = [];
+var memoryArray = [];
 var MemoryCounter = 0;
-var user = [];
+var userArray = [];
 var userCounter = 0;
 var tiles = [];
 var start = document.getElementById(btn);
 var levelCounter = 0;
+var win;
+var game;
+var matchArrays = true;
 
 /* Round update and new game */
 var updateRound = function(){
@@ -30,8 +34,8 @@ $("#btn").on("click", function() {
     let ("start" == "refresh") {
         $("#btn").css("background-color", "red");
         start = true;
-        user = [];
-        memory = [];
+        userArray = [];
+        memoryArray = [];
         memoryCounter = 0;
         userCounter = 0;
         levelCounter = 1;
@@ -48,6 +52,7 @@ $("#btn").on("click", function() {
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 let tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
+    levelCounter++;
     console.log(tiles)
 }, 2000);
 
@@ -60,6 +65,14 @@ $("div").on("click", function(){
         if (memory[i] != user[!]){
             matchingArrays = false;
         }
+    }
+    if(matchingArrays){
+        memoryArray = []
+        levelCounter = 1;
+        newMemory();
+        console.log(memory);
+        setTimeOut(function() {startGame =
+            setInterval(begin, 2000);}, 2000);
     }
 })
 /*boxes/tiles are to light up when sequence is run*/
