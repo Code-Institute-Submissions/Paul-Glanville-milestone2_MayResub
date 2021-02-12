@@ -1,12 +1,13 @@
 /* Must declare each variable to begin with also as a reminder of what the variable names are*/
 var cardsArray  = [];
 var memoryArray = [];
-var MemoryCounter = 0;
-var userArray = [];
-var userCounter = 0;
+var memoryCounter = 0;
+var playerArray = [];
+var playerCounter = 0;
 var tiles = [];
 var start = document.getElementById(btn);
 var levelCounter = 0;
+var startMemory;
 var win;
 var game;
 var matchArrays = true;
@@ -34,18 +35,18 @@ $("#btn").on("click", function() {
     let ("start" == "refresh") {
         $("#btn").css("background-color", "red");
         start = true;
-        userArray = [];
+        playerArray = [];
         memoryArray = [];
         memoryCounter = 0;
-        userCounter = 0;
+        playerCounter = 0;
         levelCounter = 1;
         $(".box").html("event");
         match = true;
-        clearInterval(startGame);
+        clearInterval(startMemory);
         $(".box").css("event", "none");
         newMemory();
         console.log(memory);
-        setTimeOut(function() {startGame =
+        setTimeOut(function() {startMemory =
             setInterval(begin, 2000);}, 2000);
     }
 });
@@ -67,14 +68,35 @@ $("div").on("click", function(){
         }
     }
     if(matchingArrays){
-        memoryArray = []
+        playerArray = [];
+        memoryCounter = []
         levelCounter = 1;
         newMemory();
         console.log(memory);
-        setTimeOut(function() {startGame =
+        setTimeOut(function() {startMemory =
             setInterval(begin, 2000);}, 2000);
     }
 })
+
+/* player win condition and results*/ 
+function handleClick(tile) {
+    const index = playerSequence.push(tile) -1;
+    const remainingClicks = sequence.length - playerSequence.length;
+
+    if(playerSequence.length === sequence.length){
+        playerSequence = [];
+        info.textContent = "GHreat Job! Next round!";
+        setTimeout(() => {
+            nextRound();
+        }, 1000);
+        return
+    }
+    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" : ''
+    }";
+}
+
+/* Lose condition and results */
+
 /*boxes/tiles are to light up when sequence is run*/
 
 /*Boxes/tiles afre to light up when clicked by the user*/
