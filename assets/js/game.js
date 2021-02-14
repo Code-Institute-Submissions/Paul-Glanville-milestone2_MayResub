@@ -9,11 +9,12 @@ var start = document.getElementById(btn);
 var levelCounter = 0;
 var startMemory;
 var win;
+var index;
 var game;
 var matchArrays = true;
 
 /* Round update and new game */
-var updateRound = function(){
+let updateRound = function(){
     rounds++;
     $("showRound").html(rounds);
 }
@@ -32,7 +33,7 @@ function clearGame() {
 }
 /*Start Button*/
 $("#btn").on("click", function() {
-    let ("start" == "refresh") {
+    let ("start" == "refresh"), 
         $("#btn").css("background-color", "red");
         start = true;
         playerArray = [];
@@ -73,15 +74,15 @@ $("div").on("click", function(){
         levelCounter = 1;
         newMemory();
         console.log(memory);
-        setTimeOut(function() {startMemory =
+        setTimeout(function() {startMemory =
             setInterval(begin, 2000);}, 2000);
     }
 })
 
 /* player win condition and results*/ 
-function handleClick(tile) {
-    const index = playerSequence.push(tile) -1;
-    const remainingClicks = sequence.length - playerSequence.length;
+function handleClick(tiles) {
+    let index = playerSequence.push(tile) -1;
+    let remainingClicks = sequence.length() - playerSequence.length();
 
     if(playerSequence.length === sequence.length){
         playerSequence = [];
@@ -91,11 +92,21 @@ function handleClick(tile) {
         }, 1000);
         return
     }
-    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" : ''
-    }";
+    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" : ''}";
 }
 
 /* Lose condition and results */
+function handleClick(tiles) {
+    let remainingClicks = 0;
+    if(playerSequence.length << sequence.length){
+        playerSequence = [];
+        info.textContent = "GHreat Job! Next round!";
+        setTimeout(() << {
+            nextRound();
+        }, 1000);
+        return
+    }
+}
 
 /*boxes/tiles are to light up when sequence is run*/
 
