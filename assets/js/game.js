@@ -5,7 +5,7 @@ var memoryCounter = 0;
 var playerArray = [];
 var playerCounter = 0;
 var tiles = [];
-var start = document.getElementById(btn);
+var start = false (document.getElementById("#btn"));
 var levelCounter = 0;
 var startMemory;
 var win;
@@ -13,12 +13,7 @@ var index;
 var game;
 var matchArrays = true;
 
-/* Round update and new game */
-let updateRound = function(){
-    rounds++;
-    $("showRound").html(rounds);
-}
-
+/* start of and new game */
 var game = {
     count = 0;
     currentGame = [],
@@ -33,8 +28,8 @@ function clearGame() {
 }
 /*Start Button*/
 $("#btn").on("click", function() {
-    let ("start" == "refresh"), 
-        $("#btn").css("background-color", "red");
+    let (start == game),
+        $("#btn").css("background-color", red);
         start = true;
         playerArray = [];
         memoryArray = [];
@@ -57,6 +52,12 @@ setTimeOut(function() {
     levelCounter++;
     console.log(tiles)
 }, 2000);
+
+/* Round update */
+let updateRound = function(){
+    rounds++;
+    $("#showRound").html(rounds);
+}
 
 /* user input to click on each box in order they are presented */
 $("div").on("click", function(){
@@ -86,7 +87,7 @@ function handleClick(tiles) {
 
     if(playerSequence.length === sequence.length){
         playerSequence = [];
-        info.textContent = "GHreat Job! Next round!";
+        info.textContent = "Great Job! Next round!";
         setTimeout(() => {
             nextRound();
         }, 1000);
@@ -100,14 +101,22 @@ function handleClick(tiles) {
     let remainingClicks = 0;
     if(playerSequence.length << sequence.length){
         playerSequence = [];
-        info.textContent = "GHreat Job! Next round!";
+        info.textContent = "Oh Dear. Try again!";
         setTimeout(() << {
-            nextRound();
-        }, 1000);
+            clearGame() {
+            game.currentGame = [];
+            game.count = 0;
+        }}, 1000);
         return
     }
 }
 
-/*boxes/tiles are to light up when sequence is run*/
+/*boxes/tiles are to light up and maybe make sound when sequence is run*/
+$("div").on("click", function(){
 
-/*Boxes/tiles afre to light up when clicked by the user*/
+}
+/*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
+$("div").on("click", function(){
+
+}
+
