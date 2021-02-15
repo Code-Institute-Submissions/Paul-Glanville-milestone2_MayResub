@@ -85,6 +85,13 @@ function handleClick(tiles) {
     let index = playerSequence.push(tile) -1;
     let remainingClicks = sequence.length() - playerSequence.length();
 
+    if(playerSequence.length === sequence.length) {
+        if(playerSequnece.lrngth === 20) {
+            resetGame("Great job! All levels completed.");
+            return
+        }
+    }
+
     if(playerSequence.length === sequence.length){
         playerSequence = [];
         info.textContent = "Great Job! Next round!";
