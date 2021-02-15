@@ -5,6 +5,11 @@
 
 ## index
 
+### Purpose of project
+### functions
+### User Stories
+### credit
+
 ---
 
 ## Purpose of project
@@ -22,10 +27,9 @@ after a sequence is played the user will then be required to click on the same t
 ### Round Counter - Displays each level/Round that the user is currently on  but will refresh to 1 if the user does not successfully click the tiles in order.
 ### dialogue box to display either the success or failure of each round.
 
-
 ---
 
-Credit
+### Credit
 
 Excellence mentor for advise and guidance with the language of javascript and direction of the project.
 

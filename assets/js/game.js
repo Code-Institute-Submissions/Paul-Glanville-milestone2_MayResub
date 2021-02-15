@@ -4,7 +4,7 @@ var memoryArray = [];
 var memoryCounter = 0;
 var playerArray = [];
 var playerCounter = 0;
-var tiles = [];
+var tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 var start = false (document.getElementById("#btn"));
 var levelCounter = 0;
 var startMemory;
@@ -69,7 +69,7 @@ $("div").on("click", function(){
             matchingArrays = false;
         }
     }
-    if(matchingArrays){
+    if(matchArrays){
         playerArray = [];
         memoryCounter = []
         levelCounter = 1;
