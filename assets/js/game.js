@@ -15,7 +15,7 @@ var matchArrays = true;
 
 /* start of and new game */
 var game = {
-    count = 0;
+    count = 0,
     currentGame = [],
     player = [],
 }
@@ -65,7 +65,7 @@ $("div").on("click", function(){
         userCounter++;
 
     for(i = 0; i < user.length; i ++){
-        if (memory[i] != user[!]){
+        if (memory[i] != user[!]) {
             matchingArrays = false;
         }
     }
@@ -100,7 +100,7 @@ function handleClick(tiles) {
         }, 1000);
         return
     }
-    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" : ''}";
+    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" ; ''}";
 }
 
 /* Lose condition and results */
@@ -119,11 +119,6 @@ function handleClick(tiles) {
 }
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
-$("div").on("click", function(){
-
-}
+/*  $("div").on("click", function(){}  */
 /*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
-$("div").on("click", function(){
-
-}
-
+/*  $("div").on("click", function(){}  */
