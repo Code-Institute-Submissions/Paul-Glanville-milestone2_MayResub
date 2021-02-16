@@ -7,6 +7,7 @@ var playerCounter = 0;
 var tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 var start = false (document.getElementById("#btn"));
 var levelCounter = 0;
+var level = 0;
 var startMemory;
 var win;
 var index;
@@ -26,6 +27,17 @@ function clearGame() {
     game.currentGame = [];
     game.count = 0;
 }
+function nextRound() {
+    level += 1;
+    let nextSequence = [rounds]
+}
+function nextLevel() {
+    let tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    let random = tiles[Math.floor(math.random) * tiles.length];
+
+    return random;
+}
+
 /*Start Button*/
 $("#btn").on("click", function() {
     let (start == game),
@@ -44,8 +56,7 @@ $("#btn").on("click", function() {
         console.log(memory);
         setTimeOut(function() {startMemory =
             setInterval(begin, 2000);}, 2000);
-    }
-});
+    });
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 let tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
