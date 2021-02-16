@@ -59,6 +59,22 @@ let updateRound = function(){
     $("#showRound").html(rounds);
 }
 
+function newRound() {
+    level += 1;
+    Container.addClass("unclickable";
+    info.textContent = "wait for sequence to finish";
+    heading.textContent = "level ${level} of 20";
+
+    let sequence = [rounds];
+    nextSequence.push(nextStep());
+    playlevel(nextSequence);
+    
+    sequence = [rounds];
+    setTimeout(() => {
+        playerTurm(level);
+    }, level*600+1000);
+}    
+
 /* user input to click on each box in order they are presented */
 $("div").on("click", function(){
     if(start == "begin" && running)
