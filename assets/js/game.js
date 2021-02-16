@@ -61,7 +61,7 @@ let updateRound = function(){
 
 function newRound() {
     level += 1;
-    Container.addClass("unclickable";
+    Container.addClass("unclickable");
     info.textContent = "wait for sequence to finish";
     heading.textContent = "level ${level} of 20";
 
