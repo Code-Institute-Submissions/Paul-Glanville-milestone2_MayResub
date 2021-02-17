@@ -65,7 +65,7 @@ setTimeOut(function() {
 }, 2000);
 
 function tileActivate(number) {
-    let tile = document.querySelector{'[data-tile= '${number}']'};
+    let tile = document.querySelector("[data-tile ='${number}']");
 }
 
 function playRound(nextSequence) {
@@ -139,7 +139,7 @@ function handleClick(tiles) {
         }, 1000);
         return
     }
-    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? "s" ; ''}";
+    info.textContent = "Player's turn: ${remainingClicks} clicks${remainingClicks > 1 ? 's' ; ''}";
 }
 
 /* Lose condition and results */
