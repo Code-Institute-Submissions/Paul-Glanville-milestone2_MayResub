@@ -64,6 +64,18 @@ setTimeOut(function() {
     console.log(tiles)
 }, 2000);
 
+function tileActivate(number) {
+    let tile = document.querySelector{'[data-tile= '${number}']'};
+}
+
+function playRound(nextSequence) {
+    nextSequence.forEach((number, index) => {
+        setTimeout(() => {
+            tileActivate(number);
+        }, (index + 1) * 550)
+    });
+}
+
 /* Round update */
 let updateRound = function(){
     rounds++;
