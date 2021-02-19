@@ -5,7 +5,7 @@ var memoryCounter = 0;
 var playerArray = [];
 var playerCounter = 0;
 var tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-var start = false (document.getElementById("#btn"));
+var start = false /* (document.getElementById("#btn")) */;
 var levelCounter = 0;
 var level = 0;
 var startMemory;
@@ -29,7 +29,7 @@ function clearGame() {
 }
 function nextRound() {
     level += 1;
-    let nextSequence = [rounds]
+    nextSequence = [rounds];
 }
 function nextLevel() {
     let tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
@@ -64,8 +64,8 @@ setTimeOut(function() {
     console.log(tiles)
 }, 2000);
 
-function tileActivate(number) {
-    let tile = document.querySelector("[data-tile ='${number}']");
+function tileActivate(number); {
+    tiles = document.querySelector("[data-tile ='${number}']");
 }
 
 function playRound(nextSequence) {
@@ -88,7 +88,7 @@ function newRound() {
     info.textContent = "wait for sequence to finish";
     heading.textContent = "level ${level} of 20";
 
-    let sequence = [rounds];
+    sequence = [rounds];
     nextSequence.push(nextStep());
     playlevel(nextSequence);
     
@@ -110,7 +110,7 @@ $("div").on("click", function(){
     }
     if(matchArrays){
         playerArray = [];
-        memoryCounter = []
+        memoryCounter = [];
         levelCounter = 1;
         newMemory();
         console.log(memory);
@@ -120,12 +120,12 @@ $("div").on("click", function(){
 })
 
 /* player win condition and results*/ 
-function handleClick(tiles) {
-    let index = playerSequence.push(tile) -1;
-    let remainingClicks = sequence.length() - playerSequence.length();
+function handleClick(tiles); {
+    index = playerSequence.push(tile) -1;
+    remainingClicks = sequence.length() - playerSequence.length();
 
     if(playerSequence.length === sequence.length) {
-        if(playerSequnece.lrngth === 20) {
+        if(playerSequnece.length === 20) {
             resetGame("Great job! All levels completed.");
             return
         }
@@ -143,8 +143,8 @@ function handleClick(tiles) {
 }
 
 /* Lose condition and results */
-function handleClick(tiles) {
-    let remainingClicks = 0;
+function handleClick(tiles); {
+    remainingClicks = 0;
     if(playerSequence.length << sequence.length){
         playerSequence = [];
         info.textContent = "Oh Dear. Try again!";
