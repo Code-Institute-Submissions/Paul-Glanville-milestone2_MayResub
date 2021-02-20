@@ -16,9 +16,9 @@ var matchArrays = true;
 
 /* start of and new game */
 var game = {
-    count = 0,
-    currentGame = [],
-    player = [],
+    count: 0,
+    currentGame: [],
+    player: [],
 }
 function newGame() {
     clearGame();
@@ -100,7 +100,7 @@ function newRound() {
 
 /* user input to click on each box in order they are presented */
 $("div").on("click", function(){
-    if(start == "begin" && running)
+    if(start == "begin" && "running");
         userCounter++;
 
     for(i = 0; i < user.length; i ++){
