@@ -32,15 +32,15 @@ function nextRound() {
     nextSequence = [rounds];
 }
 function nextLevel() {
-    let tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-    let random = tiles[Math.floor(math.random) * tiles.length];
+    tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    random = tiles[Math.floor(math.random) * tiles.length];
 
     return random;
 }
 
 /*Start Button*/
 $("#btn").on("click", function() {
-    let (start == game),
+        start == game;
         $("#btn").css("background-color", red);
         start = true;
         playerArray = [];
