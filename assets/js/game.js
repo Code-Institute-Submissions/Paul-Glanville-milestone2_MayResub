@@ -158,6 +158,8 @@ function handleClick(tiles); {
 }
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
-/*  $("div").on("click", function(){}  */
+$("div").on("click", function(){
+    addEventListener("click", flash)
+} 
 /*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
 /*  $("div").on("click", function(){}  */
