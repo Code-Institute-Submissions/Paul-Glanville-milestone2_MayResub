@@ -96,6 +96,9 @@ function newRound() {
     setTimeout(() => {
         playerTurm(level);
     }, level*600+1000);
+
+    newRound.addEventListener();
+    return newRound;
 }    
 
 /* user input to click on each box in order they are presented */
