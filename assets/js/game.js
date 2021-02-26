@@ -158,8 +158,9 @@ function handleClick(tiles); {
 }
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
-var card = getElementByClass("box")
-    card.addEventListener("click", tiles)
+var card = getElementByClass("box").addEventListener("click", tiles);{
+    return card;
+};
 
 /*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
 /*  $("div").on("click", function(){}  */
