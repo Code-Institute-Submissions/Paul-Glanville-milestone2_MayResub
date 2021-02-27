@@ -40,23 +40,24 @@ function nextLevel() {
 
 /*Start Button*/
 $("#btn").on("click", function() {
-        start == game;
-        $("#btn").css("background-color", red);
-        start = true;
-        playerArray = [];
-        memoryArray = [];
-        memoryCounter = 0;
-        playerCounter = 0;
-        levelCounter = 1;
-        $(".box").html("event");
-        match = true;
-        clearInterval(startMemory);
-        $(".box").css("event", "none");
-        newMemory();
-        console.log(memory);
-        setTimeOut(function() {startMemory =
-            setInterval(begin, 2000);}, 2000);
-    });
+    start == game;
+    $("#btn").css("background-color", red);
+    start = true;
+    playerArray = [];
+    memoryArray = [];
+    memoryCounter = 0;
+    playerCounter = 0;
+    levelCounter = 1;
+    $(".box").html("event");
+    match = true;
+    clearInterval(startMemory);
+    $(".box").css("event", "none");
+    newMemory();
+    console.log(memory);
+    setTimeOut(function() {startMemory =
+        setInterval(begin, 2000);}, 2000);
+});
+$("#btn").addEventListener("click", start);
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 let tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
