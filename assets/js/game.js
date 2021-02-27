@@ -108,7 +108,7 @@ $("div").on("click", function(){
         userCounter++;
 
     for(i = 0; i < user.length; i ++){
-        if (memory[i] != user[!]) {
+        if (memory[i] != user[i]) {
             matchingArrays = false;
         }
     }
@@ -152,7 +152,7 @@ function handleClick(tiles); {
     if(playerSequence.length << sequence.length){
         playerSequence = [];
         info.textContent = "Oh Dear. Try again!";
-        setTimeout(() << {
+        setTimeout((medium) << {
             clearGame() {
             game.currentGame = [];
             game.count = 0;
