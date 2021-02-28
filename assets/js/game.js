@@ -51,7 +51,7 @@ $("#btn").on("click", function() {
     $(".box").html("event");
     match = true;
     clearInterval(startMemory);
-    $(".box").css("event", "none");
+    $(".box").css("event", none);
     newMemory();
     console.log(memory);
     setTimeOut(function() {startMemory =
@@ -85,7 +85,7 @@ let updateRound = function(){
 
 function newRound() {
     level += 1;
-    Container.addClass("unclickable");
+    Container.addClass(unclickable);
     info.textContent = "wait for sequence to finish";
     heading.textContent = "level ${level} of 20";
 
@@ -163,7 +163,7 @@ function handleClick(tiles); {
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
 var card = getElementByClass("box").addEventListener("click", tiles);{
-    return card;
+    return;
 };
 
 /*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
