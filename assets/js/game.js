@@ -155,7 +155,7 @@ function handleClick(tiles); {
     if(playerSequence.length < sequence.length){
         playerSequence = [];
         info.textContent = "Oh Dear. Try again!";
-        setTimeout((medium) => {
+        setTimeout((_medium) => {
             clearGame()
             game.currentGame = [];
             game.count = 0;
