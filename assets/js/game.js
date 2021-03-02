@@ -1,21 +1,24 @@
 /* Must declare each variable to begin with also as a reminder of what the variable names are*/
-var cardsArray  = [];
-var memoryArray = [];
-var memoryCounter = 0;
-var playerArray = [];
-var playerCounter = 0;
-var tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-var start = false /* (document.getElementById("#btn")) */;
-var levelCounter = 0;
-var level = 0;
-var startMemory;
-var win;
-var index;
-var game;
-var matchArrays = true;
+let cardsArray  = [];
+let memoryArray = [];
+let memoryCounter = 0;
+let playerArray = [];
+let playerCounter = 0;
+let tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+let start = false /* (document.getElementById("#btn")) */;
+let levelCounter = 0;
+let level = 0;
+let startMemory;
+let playerTurn;
+let newMemory;
+let rounds = [];
+let win;
+let index;
+let game;
+let matchArrays = true;
 
 /* start of and new game */
-var game = {
+let game = {
     count: 0,
     currentGame: [],
     player: [],
@@ -41,7 +44,7 @@ function nextLevel() {
 /*Start Button*/
 $("#btn").on("click", function() {
     start == game;
-    $("#btn").css("background-color", red);
+    $("#btn").css("background-color", 'red');
     start = true;
     playerArray = [];
     memoryArray = [];
@@ -51,7 +54,7 @@ $("#btn").on("click", function() {
     $(".box").html("event");
     match = true;
     clearInterval(startMemory);
-    $(".box").css("event", none);
+    $(".box").css("event", 'none');
     newMemory();
     console.log(memory);
     setTimeOut(function() {startMemory =
@@ -95,7 +98,7 @@ function newRound() {
     
     sequence = [rounds];
     setTimeout(() => {
-        playerTurm(level);
+        playerTurn(turn);
     }, level*600+1000);
 
     newRound.addEventListener();
@@ -149,20 +152,20 @@ function handleClick(tiles); {
 /* Lose condition and results */
 function handleClick(tiles); {
     remainingClicks = 0;
-    if(playerSequence.length << sequence.length){
+    if(playerSequence.length < sequence.length){
         playerSequence = [];
         info.textContent = "Oh Dear. Try again!";
-        setTimeout((medium) << {
-            clearGame() {
+        setTimeout((medium) => {
+            clearGame()
             game.currentGame = [];
             game.count = 0;
-        }}, 1000);
+        }, 1000);
         return
     }
 }
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
-var card = getElementByClass("box").addEventListener("click", tiles);{
+let card = getElementByClass("box").addEventListener("click", tiles);{
     return;
 };
 
