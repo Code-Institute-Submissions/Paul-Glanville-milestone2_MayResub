@@ -4,12 +4,12 @@ let memoryArray = [];
 let memoryCounter = 0;
 let playerArray = [];
 let playerCounter = 0;
-let levelCounter;
-let level = 0;
+let levelCounter = 0;
+let level;
 
 $("#btn").on("click", function() {
     start = begin;
-    $("#btn").css("background-color", 'red');
+    $("#btn").addEventListener("begin").css("background-color", "red");
         start = true;
         playerArray = [];
         memoryArray = [];

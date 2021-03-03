@@ -50,7 +50,7 @@ $("#btn").on("click", function() {
     memoryCounter = 0;
     playerCounter = 0;
     levelCounter = 1;
-    $(".box").html("event");
+    $(".box").html.addEventListener("event");
     match = true;
     clearInterval(startMemory);
     $(".box").css("event", 'none');
@@ -59,7 +59,6 @@ $("#btn").on("click", function() {
     setTimeOut(function() {startMemory =
         setInterval(begin, 2000);}, 2000);
 });
-$("#btn").addEventListener("click");
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
