@@ -4,7 +4,7 @@ let memoryArray = [];
 let memoryCounter = 0;
 let playerArray = [];
 let playerCounter = 0;
-let levelCounter = 1;
+let levelCounter;
 let level = 0;
 
 $("#btn").on("click", function() {
