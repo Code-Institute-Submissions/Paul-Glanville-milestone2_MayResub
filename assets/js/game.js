@@ -14,7 +14,6 @@ let newMemory;
 let rounds = [];
 let win;
 let index;
-let game;
 let matchArrays = true;
 
 /* start of and new game */
@@ -56,13 +55,13 @@ $("#btn").on("click", function() {
     clearInterval(startMemory);
     $(".box").css("event", 'none');
     newMemory();
-    console.log(memory);
+    console.log(memory, start);
     setTimeOut(function() {startMemory =
         setInterval(begin, 2000);}, 2000);
 });
 $("#btn").addEventListener("click");
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
-let tiles = document.getElementsByTagName("div").sibling("p");
+tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
     levelCounter++;
     console.log(tiles)
