@@ -43,7 +43,7 @@ function nextLevel() {
 
 /*Start Button*/
 $("#btn").on("click", function() {
-    start == game;
+    start = game;
     $("#btn").css("background-color", 'red');
     start = true;
     playerArray = [];
@@ -60,7 +60,7 @@ $("#btn").on("click", function() {
     setTimeOut(function() {startMemory =
         setInterval(begin, 2000);}, 2000);
 });
-$("#btn").addEventListener("click", start);
+$("#btn").addEventListener("click");
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 let tiles = document.getElementsByTagName("div").sibling("p");
 setTimeOut(function() {
@@ -101,7 +101,7 @@ function newRound() {
         playerTurn(turn);
     }, level*600+1000);
 
-    newRound.addEventListener();
+    newRound.addEventListener(sequence);
     return newRound;
 }    
 
@@ -165,9 +165,10 @@ function handleClick(tiles); {
 }
 
 /*boxes/tiles are to light up and maybe make sound when sequence is run*/
-let card = getElementByClass("box").addEventListener("click", tiles);{
+let card = getElementByClass("box").addEventListener("click", function()
+{
     return;
-};
+});
 
 /*Boxes/tiles are to light up and maybe make sound when clicked by the user*/
 /*  $("div").on("click", function(){}  */
