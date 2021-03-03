@@ -5,7 +5,7 @@ let memoryCounter = 0;
 let playerArray = [];
 let playerCounter = 0;
 let tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-let start = false /* (document.getElementById("#btn")) */;
+let start = true /* (document.getElementById("#btn")) */;
 let levelCounter = 0;
 let level = 0;
 let startMemory;
@@ -42,7 +42,7 @@ function nextLevel() {
 
 /*Start Button*/
 $("#btn").on("click", function() {
-    start = game;
+    start = begin;
     $("#btn").css("background-color", 'red');
     start = true;
     playerArray = [];
@@ -67,7 +67,7 @@ setTimeOut(function() {
     console.log(tiles)
 }, 2000);
 
-function tileActivate(number); {
+function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 
@@ -126,7 +126,7 @@ $("div").on("click", function(){
 })
 
 /* player win condition and results*/ 
-function handleClick(tiles); {
+function handleClick(_tiles) {
     index = playerSequence.push(tile) -1;
     remainingClicks = sequence.length() - playerSequence.length();
 
@@ -149,7 +149,7 @@ function handleClick(tiles); {
 }
 
 /* Lose condition and results */
-function handleClick(tiles); {
+function handleClick(_tiles) {
     remainingClicks = 0;
     if(playerSequence.length < sequence.length){
         playerSequence = [];
