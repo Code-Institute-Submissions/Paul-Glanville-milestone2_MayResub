@@ -34,7 +34,6 @@ function nextRound() {
     nextSequence = [rounds];
 }
 function nextLevel() {
-    tiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     random = tiles[Math.floor(math.random) * tiles.length];
 
     return random;
@@ -56,12 +55,12 @@ $("#btn").on("click", function() {
     $(".box").css("event", 'none');
     newMemory();
     console.log(memory, start);
-    setTimeOut(function() {startMemory =
+    setTimeout(function() {startMemory =
         setInterval(begin, 2000);}, 2000);
 });
 /*Tiles and boxes within the grid, must create sequence for the,m to appear to the user */
 tiles = document.getElementsByTagName("div").sibling("p");
-setTimeOut(function() {
+setTimeout(function() {
     levelCounter++;
     console.log(tiles)
 }, 2000);

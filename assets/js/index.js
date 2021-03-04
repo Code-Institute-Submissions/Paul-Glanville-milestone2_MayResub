@@ -8,6 +8,7 @@ let levelCounter = [];
 let level;
 let tiles;
 let startMemory;
+let matchingArrays = true;
 
 $("#btn").on("click", function() {
     start = "begin";
@@ -29,6 +30,11 @@ setTimeout(function() {
     levelCounter++;
 }, 2000);
 
+let updateRound = function(){
+    rounds++;
+    $("#showRound").html(rounds);
+}
+
 let game = {
     count: 0,
     currentGame: [],
@@ -36,4 +42,4 @@ let game = {
 };
 console.log($("#btn"), start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles);
+console.log(game, tiles, updateRound);
