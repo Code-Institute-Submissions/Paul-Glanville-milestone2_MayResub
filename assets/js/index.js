@@ -22,8 +22,12 @@ $("#btn").on("click", function() {
       clearInterval("begin");
       setTimeout(function() {startMemory =
           setInterval("begin", 2000);}, 2000);
-          return clearInterval;
+        return clearInterval;
 });
+
+function tileActivate(_number) {
+    tiles = document.querySelector("[data-tile ='${number}']");
+}
 
 tiles = document.getElementsByTagName("p");
 setTimeout(function() {
@@ -42,4 +46,4 @@ let game = {
 };
 console.log($("#btn"), start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles, updateRound);
+console.log(game, tiles, updateRound, tileActivate);

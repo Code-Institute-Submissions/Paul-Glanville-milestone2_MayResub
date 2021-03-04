@@ -35,7 +35,6 @@ function nextRound() {
 }
 function nextLevel() {
     random = tiles[Math.floor(math.random) * tiles.length];
-
     return random;
 }
 
