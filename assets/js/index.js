@@ -49,7 +49,8 @@ function playRound(nextSequence) {
             tileActivate(number);
         }, (index + 1) * 550)
     });
+    return playRound
 }
 console.log(start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles, updateRound, playRound);
+console.log(game, tiles, updateRound);
