@@ -6,7 +6,6 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
-let tiles;
 let startMemory;
 let matchingArrays = true;
 
@@ -29,7 +28,7 @@ function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 
-tiles = document.getElementsByTagName("p");
+let tiles = document.getElementsByTagName("p");
 setTimeout(function() {
     levelCounter++;
 }, 2000);
@@ -44,6 +43,13 @@ let game = {
     currentGame: [],
     player: [],
 };
-console.log($("#btn"), start, memoryArray, memoryCounter);
+function playRound(nextSequence) {
+    nextSequence.forEach((number, index) => {
+        setTimeout(() => {
+            tileActivate(number);
+        }, (index + 1) * 550)
+    });
+}
+console.log(start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles, updateRound, tileActivate);
+console.log(game, tiles, updateRound, playRound);
