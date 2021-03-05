@@ -9,6 +9,7 @@ let level;
 let startMemory;
 let matchingArrays = true;
 
+/* Start Button */
 $("#btn").on("click", function() {
     start = "begin";
     $("#btn").addEventListener("begin").css("background-color", "red");
@@ -26,6 +27,11 @@ $("#btn").on("click", function() {
 
 function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
+}
+
+function nextLevel() {
+    random = tiles[Math.floor(math.random) * tiles.length];
+    return random;
 }
 
 let tiles = document.getElementsByTagName("p");
