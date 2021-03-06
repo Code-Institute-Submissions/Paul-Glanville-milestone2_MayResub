@@ -74,8 +74,8 @@ function newRound() {
     }, level*600+1000);
 
     newRound.addEventListener(sequence);
-    return newRound;
+    return sequence;
 }    
 console.log(start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles, updateRound);
+console.log(game, tiles, updateRound, newRound);
