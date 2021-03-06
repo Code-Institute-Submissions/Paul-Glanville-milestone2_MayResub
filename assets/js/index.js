@@ -55,8 +55,27 @@ function playRound(nextSequence) {
             tileActivate(number);
         }, (index + 1) * 550)
     });
-    return playRound
+    return playRound;
 }
+
+function newRound() {
+    level += 1;
+    Container.addClass(unclickable);
+    info.textContent = "wait for sequence to finish";
+    heading.textContent = "level ${level} of 20";
+
+    sequence = [rounds];
+    nextSequence.push(nextStep());
+    playlevel(nextSequence);
+    
+    sequence = [rounds];
+    setTimeout(() => {
+        playerTurn(turn);
+    }, level*600+1000);
+
+    newRound.addEventListener(sequence);
+    return newRound;
+}    
 console.log(start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
 console.log(game, tiles, updateRound);
