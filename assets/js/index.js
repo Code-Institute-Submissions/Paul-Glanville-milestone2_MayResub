@@ -1,5 +1,5 @@
 let start = true;
-let cardsArray  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+let cardsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 let memoryArray = [];
 let memoryCounter = [];
 let playerArray = [];
@@ -42,13 +42,14 @@ setTimeout(function() {
 let updateRound = function(){
     rounds++;
     $("#showRound").html(rounds);
-}
+};
 
 let game = {
     count: 0,
     currentGame: [],
     player: [],
 };
+
 function playRound(nextSequence) {
     nextSequence.forEach((number, index) => {
         setTimeout(() => {
@@ -67,7 +68,6 @@ function newRound() {
     sequence = [rounds];
     nextSequence.push(nextStep());
     playlevel(nextSequence);
-    
     sequence = [rounds];
     setTimeout(() => {
         playerTurn(turn);
@@ -75,7 +75,7 @@ function newRound() {
 
     newRound.addEventListener(sequence);
     return sequence;
-}    
+}
 console.log(start, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, levelCounter, cardsArray);
 console.log(game, tiles, updateRound, newRound);
