@@ -48,8 +48,7 @@ let game = {
     count: 0,
     currentGame: [],
     player: [],
-};
-
+}
 function playRound(nextSequence) {
     nextSequence.forEach((number, index) => {
         setTimeout(() => {
