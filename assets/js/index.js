@@ -12,7 +12,7 @@ let matchingArrays = true;
 /* Start Button */
 $("#btn").on("click", function() {
     start = "begin";
-    $("#btn").addEventListener("begin").css("background-color", "red");
+    $("#btn").on("begin").css("background-color", "red");
       playerArray = [];
       memoryArray = [];
       memoryCounter = 0;
