@@ -14,7 +14,7 @@ let matchArrays = true;
 $("#btn").on("click", function() {
     $("#btn").on("start").css("background-color", "red");
       cardsArray = [];
-      let start = true;
+      start = true;
       playerArray = [];
       memoryArray = [];
       memoryCounter = 0;
@@ -38,7 +38,7 @@ let tiles = document.getElementsByClassName("p");
 let updateRound = function(){
     rounds++;
   $("#showRound").css("#showRounds");
-}
+};
 
 let game = {
   count: 0,
@@ -78,8 +78,8 @@ $("div").on("click", function(){
 function newRound() {
   level += 1;
   Container.addClass(unclickable);
-  info.textContent = 'wait for sequence to finish';
-  heading.textContent = 'level ${level} of 20';
+  info.textContent = "wait for sequence to finish";
+  heading.textContent = "level ${level} of 20";
 
   sequence = [rounds];
   nextSequence.push(nextStep());
