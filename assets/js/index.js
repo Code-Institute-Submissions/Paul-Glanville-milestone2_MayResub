@@ -57,7 +57,7 @@ function playRound(nextSequence) {
   return nextSequwncw;
 }
 
-$("div").on("click", function(){
+$(".box").on("click", function(){
     if(game == "start" && "running");
         userCounter++;
 
