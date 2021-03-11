@@ -6,6 +6,8 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
+let memory = [];
+let user;
 let playLevel;
 let userCounter = [];
 let startMemory;
@@ -56,7 +58,7 @@ function playRound(nextSequence) {
 }
 
 $("div").on("click", function(){
-    if(start == "game" && "running");
+    if(game == "start" && "running");
         userCounter++;
 
     for(i = 0; i < user.length; i ++){
@@ -68,7 +70,7 @@ $("div").on("click", function(){
         playerArray = [];
         memoryCounter = [];
         levelCounter = 1;
-        newMemory();
+        newMemory = [];
         console.log(memory);
         setTimeout(function() {startMemory =
             setInterval(start, 2000);}, 2000);
@@ -92,6 +94,6 @@ function newRound() {
   return sequence;
 }
 
-console.log(start, memoryArray, memoryCounter);
+console.log(start, memory, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, playLevel, levelCounter, cardsArray);
 console.log(game, level, tiles, updateRound, newRound);
