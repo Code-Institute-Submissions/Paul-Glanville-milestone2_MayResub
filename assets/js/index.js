@@ -6,75 +6,92 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
+let playLevel;
+let userCounter = [];
 let startMemory;
-let matchingArrays = true;
+let matchArrays = true;
 
-/* Start Button */
 $("#btn").on("click", function() {
-    start = "begin";
-    $("#btn").on("begin").css("background-color", "red");
+    $("#btn").on("start").css("background-color", "red");
+      cardsArray = [];
+      let start = true;
       playerArray = [];
       memoryArray = [];
       memoryCounter = 0;
       playerCounter = 0;
       levelCounter = 1;
-    $(".box").html("event");
-      clearInterval("begin");
+      clearInterval("game");
       setTimeout(function() {startMemory =
-          setInterval("begin", 2000);}, 2000);
-        return clearInterval;
+          setInterval("game", 2000);}, 2000);
+        return startMemory;
 });
 
 function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 
-function nextLevel() {
-    random = tiles[Math.floor(math.random) * tiles.length];
-    return random;
-}
-
-let tiles = document.getElementsByTagName("p");
-setTimeout(function() {
+let tiles = document.getElementsByClassName("p");
+  setTimeout(function() {
     levelCounter++;
 }, 2000);
 
 let updateRound = function(){
     rounds++;
-    $("#showRound").html(rounds);
-};
+  $("#showRound").css("#showRounds");
+}
 
 let game = {
-    count: 0,
-    currentGame: [],
-    player: [],
-}
+  count: 0,
+  currentGame: [],
+  player: [],
+};
+
 function playRound(nextSequence) {
     nextSequence.forEach((number, index) => {
-        setTimeout(() => {
-            tileActivate(number);
-        }, (index + 1) * 550)
-    });
-    return playRound;
+      setTimeout(() => {
+        tileActivate(number);
+      }, (index + 1) * 550)
+  });
+  return nextSequwncw;
 }
+
+$("div").on("click", function(){
+    if(start == "game" && "running");
+        userCounter++;
+
+    for(i = 0; i < user.length; i ++){
+        if (memory[i] != user[i]) {
+            matchingArrays = false;
+        }
+    }
+    if(matchArrays){
+        playerArray = [];
+        memoryCounter = [];
+        levelCounter = 1;
+        newMemory();
+        console.log(memory);
+        setTimeout(function() {startMemory =
+            setInterval(start, 2000);}, 2000);
+    }
+})
 
 function newRound() {
-    level += 1;
-    Container.addClass(unclickable);
-    info.textContent = "wait for sequence to finish";
-    heading.textContent = "level ${level} of 20";
+  level += 1;
+  Container.addClass(unclickable);
+  info.textContent = 'wait for sequence to finish';
+  heading.textContent = 'level ${level} of 20';
 
-    sequence = [rounds];
-    nextSequence.push(nextStep());
-    playlevel(nextSequence);
-    sequence = [rounds];
-    setTimeout(() => {
-        playerTurn(turn);
-    }, level*600+1000);
+  sequence = [rounds];
+  nextSequence.push(nextStep());
+  playlevel(nextSequence);
+  setTimeout(() => {
+      playerTurn(turn);
+  }, level*600+1000);
 
-    newRound.addEventListener(sequence);
-    return sequence;
+  newRound.addEventListener(sequence);
+  return sequence;
 }
+
 console.log(start, memoryArray, memoryCounter);
-console.log(playerCounter, playerArray, levelCounter, cardsArray);
-console.log(game, tiles, updateRound, newRound);
+console.log(playerCounter, playerArray, playLevel, levelCounter, cardsArray);
+console.log(game, level, tiles, updateRound, newRound);
