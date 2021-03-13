@@ -13,15 +13,16 @@ let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
-/* Start button */ 
+
+/*Start button*/ 
 $("#btn").on("click", function(start) {
     $("#btn").on("start").css("background-color", "beige").toggle("hide");
       start = "game";
       cardsArray = [];
       playerArray = [];
       memoryArray = [];
-      memoryCounter = 0;
-      playerCounter = 0;
+      memoryCounter = [];
+      playerCounter = [];
       levelCounter = 1;
       clearInterval("game");
       setTimeout(function() {startMemory =
@@ -60,7 +61,7 @@ function playRound(nextSequence) {
 }
 /* matchArrays and match update */
 $(".box").on("click", function(){
-    if(tiles == "matchArrays" && "rounds");
+    if(tiles == true && true);
         userCounter++;
 
     for(i = 0; i < userCounter.length; i ++){
@@ -83,7 +84,6 @@ function newRound() {
   Container.addClass(unclickable);
   info.textContent = "wait for sequence to finish";
   heading.textContent = "level ${level} of 20";
-  
   sequence = [rounds];
   nextSequence.push(nextStep());
   playlevel(nextSequence);
