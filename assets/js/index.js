@@ -30,6 +30,13 @@ $("#btn").on("click", function(start) {
         return startMemory;
 });
 
+let rounds = 0;
+let i = rounds;
+    for (i = 0; i < 20; i++) {
+  document.write(i);
+}
+
+
 function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
