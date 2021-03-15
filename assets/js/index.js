@@ -1,6 +1,6 @@
 /* Variables */
 let start = true;
-let cardsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+let cardsArray = document.getElementById(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"]);
 let memoryArray = [];
 let memoryCounter = [];
 let playerArray = [];
@@ -8,6 +8,7 @@ let playerCounter = [];
 let levelCounter = [];
 let level;
 let memory = [];
+let sequence;
 let user;
 let playLevel;
 let userCounter = [];
@@ -16,7 +17,7 @@ let matchArrays = true;
 
 /*Start button*/ 
 $("#btn").on("click", function(start) {
-    $("#btn").on("start").css("background-color", "beige").toggle("hide");
+    $("#btn").on("start").css("background-color", "beige");
       start = "game";
       cardsArray = [];
       playerArray = [];
@@ -30,18 +31,37 @@ $("#btn").on("click", function(start) {
         return startMemory;
 });
 
-let rounds = 0;
-let i = rounds;
-    for (i = 0; i < 20; i++) {
-  document.write(i);
+function lightUp(){
+  
 }
 
+function newGame(){
+  clearGame();
+}
+function clearGame() {
+    game.currentGame = [];
+    game.count = 0;
+}
+function nextRound() {
+    level += 1;
+    nextSequence = [rounds];
+}
+function nextLevel() {
+    random = tiles[Math.floor(math.random) * tiles.length];
+    return random;
+}
+
+let rounds = 0;
+let i = rounds;
+  for (i = 0; i < 20; i++) {
+    document.write(i);
+}
 
 function tileActivate(_number) {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 
-let tiles = document.getElementsByClassName("box");
+let tiles = cardsArray;
   setTimeout(function() {
     levelCounter++;
 }, 2000);
@@ -52,13 +72,14 @@ let updateRound = function(){
 };
 
 let game = {
-  count: 1,
+  count: 0,
+  possibilties: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'],
   currentGame: [],
   player: [],
 }
 /* play round function */
 function playRound(nextSequence) {
-  $(".box").on("start").css("background-color", "beige", 1000);
+  $(".box").on("start").css("background-color", "#bee9e8", 1000);
     nextSequence.forEach((number, index) => {
       setTimeout(() => {
         tileActivate(number);
@@ -79,13 +100,12 @@ $(".box").on("click", function(){
     if(matchArrays){
         playerArray = [];
         memoryCounter = [];
-        levelCounter = 1;
+        levelCounter = [i];
         newMemory = [];
         setTimeout(function() {startMemory =
             setInterval(start, 2000);}, 2000);
     }
 })
-/* new round update  */
 function newRound() {
   level += 1;
   Container.addClass(unclickable);
@@ -101,8 +121,10 @@ function newRound() {
   newRound.addEventListener(sequence);
   return sequence;
 }
+/* new round update  */
 
-console.log(start, memory, memoryArray, memoryCounter);
+
+console.log(start, memory, memoryArray, memoryCounter, rounds);
 console.log(playerCounter, playerArray, playLevel, levelCounter, cardsArray);
 console.log(game, level, tiles, updateRound, newRound);
 console.log(memory, matchArrays);
