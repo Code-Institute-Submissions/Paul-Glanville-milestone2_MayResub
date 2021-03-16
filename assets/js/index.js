@@ -1,6 +1,6 @@
 /* Variables */
-let start = true;
-let cardsArray = document.getElementById(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"]);
+let start = false;
+let cardsArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
 let memoryArray = [];
 let memoryCounter = [];
 let playerArray = [];
@@ -18,7 +18,7 @@ let matchArrays = true;
 /*Start button*/ 
 $("#btn").on("click", function(start) {
     $("#btn").on("start").css("background-color", "beige");
-      start = "game";
+      start = true;
       cardsArray = [];
       playerArray = [];
       memoryArray = [];
@@ -31,8 +31,28 @@ $("#btn").on("click", function(start) {
         return startMemory;
 });
 
-function lightUp(){
-  
+function show() {
+  console.log("Running show with: " + levelPattern);
+  patternCopy = [];
+  let h = 0;
+  for (h = 0; h <= levelPattern.length; h++) {
+    if (h === levelPattern.length) {
+      lightUp("run", h);
+    } else {
+      lightUp(levelPattern[h], h);
+    }
+  }
+}
+
+function lightUp(name, num){
+  key.push(
+    setTimeout(function){
+    if(name === "run"){
+  playerTurn = true;
+    }else{
+      pressed(name);
+      }
+    }, 700 *num);
 }
 
 function newGame(){
