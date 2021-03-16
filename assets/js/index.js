@@ -16,8 +16,8 @@ let startMemory;
 let matchArrays = true;
 
 /*Start button*/ 
-$("#btn").on("click", function(start) {
-    $("#btn").on("start").css("background-color", "beige");
+$("#btn").on("click", function() {
+    $("#btn").on("click").css("background-color", "beige");
       start = true;
       cardsArray = [];
       playerArray = [];
@@ -44,15 +44,16 @@ function show() {
   }
 }
 
-function lightUp(name, num){
+function lightUp(name, num) {
   key.push(
-    setTimeout(function){
-    if(name === "run"){
-  playerTurn = true;
-    }else{
-      pressed(name);
+    setTimeout(function() {
+      if (name === "run") { 
+        playerTurn = true;
+      } else {
+        pressed(name);
       }
-    }, 700 *num);
+    }, 850 * num)
+  );
 }
 
 function newGame(){
