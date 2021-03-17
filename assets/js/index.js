@@ -10,22 +10,16 @@ let level;
 let memory = [];
 let sequence;
 let user;
+let tiles = cardsArray;
 let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
 
-/*Start button*/ 
-$("#btn").on("click", function(startMemory) {
-    $("#btn").css("background-color", "beige");
+/* Start function */
+$("#btn").on("click", function(_start) {
       start = true;
-      cardsArray = [];
-      playerArray = [];
-      memoryArray = [];
-      memoryCounter = [];
-      playerCounter = [];
-      levelCounter = 1;
-      clearInterval("game");
+      whichToChange();
       setTimeout(function() {startMemory =
           setInterval("game", 800);}, 800);
         return startMemory;
@@ -47,20 +41,16 @@ function whichToChange(){
   colour = getColour();
   $(number).css("background-color", colour);
 }
-$("#btn").click(function(){
-//runs the code to change the color of a random box
-  whichToChange();
-});
 
 function show() {
-  console.log("Running show with: " + levelPattern);
+  console.log("Running show with: " + roundPattern);
   patternCopy = [];
   let h = 0;
-  for (h = 0; h <= levelPattern.length; h++) {
-    if (h === levelPattern.length) {
+  for (h = 0; h <= roundPattern.length; h++) {
+    if (h === roundPattern.length) {
       lightUp("run", h);
     } else {
-      lightUp(levelPattern[h], h);
+      lightUp(roundPattern[h], h);
     }
   }
 }
@@ -73,10 +63,15 @@ function lightUp(name, num) {
       } else {
         pressed(name);
       }
-    }, 850 * num)
+    }, 800 * num)
   );
 }
 
+let game = {
+  count: 0,
+  currentGame: [],
+  player: [],
+}
 function newGame(){
   clearGame();
 }
@@ -96,38 +91,32 @@ function nextLevel() {
 let rounds = 0;
 let i = rounds;
   for (i = 0; i < 20; i++) {
-    document.write(i);
+    document.getElementById(i);
 }
 
-function tileActivate(_number) {
+function tileActivate() {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 
-let tiles = cardsArray;
+
   setTimeout(function() {
     levelCounter++;
-}, 2000);
+}, 900);
 /* round update */
 let updateRound = function(){
     rounds++;
-  $("#showRound").css("showRounds");
+  $("showRounds").css("showRounds");
 };
 
-let game = {
-  count: 0,
-  possibilties: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'],
-  currentGame: [],
-  player: [],
-}
 /* play round function */
 function playRound(nextSequence) {
-  $("number").css("background-color", "#bee9e8", 1000);
+  $("number").css("background-color", 800);
     nextSequence.forEach((number, index) => {
       setTimeout(() => {
         tileActivate(number);
       }, (index + 1) * 550)
   });
-  return nextSequwncw;
+  return nextSequence;
 }
 /* matchArrays and match update */
 $("number").on("click", function(){
@@ -145,7 +134,7 @@ $("number").on("click", function(){
         levelCounter = [i];
         newMemory = [];
         setTimeout(function() {startMemory =
-            setInterval(start, 2000);}, 2000);
+            setInterval(start, 700);}, 700);
     }
 })
 function newRound() {
@@ -166,7 +155,7 @@ function newRound() {
 /* new round update  */
 
 
-console.log(start, memory, memoryArray, memoryCounter, rounds);
+console.log(memory, memoryArray, memoryCounter, rounds);
 console.log(playerCounter, playerArray, playLevel, levelCounter, cardsArray);
-console.log(game, level, tiles, updateRound, newRound);
+console.log(game, level, updateRound, newRound);
 console.log(memory, matchArrays);
