@@ -17,13 +17,37 @@ let userCounter = [];
 let startMemory;
 let matchArrays = true;
 
+let game = {
+  count: 0,
+  currentGame: [],
+  player: [],
+}
+function newGame(){
+  clearGame();
+}
+function clearGame() {
+    game.currentGame = [];
+    game.count = 0;
+}
+function nextRound() {
+    level += 1;
+    nextSequence = [tiles];
+}
+function nextLevel() {
+    random = tiles[Math.floor(math.random) * number.length];
+    return random;
+}
+
+function tileActivate() {
+    tiles = document.querySelector("[data-tile ='${number}']");
+}
 /* Start function */
 $("#btn").on("click", function(start) {
       start = true;
   window.show();
       whichToChange();
       setTimeout(function() {startMemory =
-          setInterval("sequence", 800);}, 800);
+          setInterval("sequence", 500);}, 500);
         return startMemory;
 });
 
@@ -45,57 +69,32 @@ function whichToChange(){
 }
 
 function show() {
-  Pattern = [];
+  hashtag = ["#"];
   let h = 0;
-  for (h = 0; h <= roundPattern.length; h++) {
-    if (h === roundPattern.length) {
+  for (h = 0; h <= hashtag.length; h++) {
+    if (h === hashtag.length) {
       lightUp("num", h);
     } else {
-      lightUp(roundPattern[h], h);
+      lightUp(hashtag[h], h);
     }
   }
-  console.log("Running show with: " + roundPattern);
-  return lightUp;
+  console.log("Running show with: " + hashtag);
+  return hashtag;
 }
 
 function lightUp(name, num) {
     setTimeout(function() {
-      if (name === "num") {
+      if (name === num) {
         playerTurn = true;
       } else {
-        pressed(name);
+      let pressed = name;
       }
-    }, 800 * num);
-}
-
-let game = {
-  count: 0,
-  currentGame: [],
-  player: [],
-}
-function newGame(){
-  clearGame();
-}
-function clearGame() {
-    game.currentGame = [];
-    game.count = 0;
-}
-function nextRound() {
-    level += 1;
-    nextSequence = [rounds];
-}
-function nextLevel() {
-    random = tiles[Math.floor(math.random) * tiles.length];
-    return random;
-}
-
-function tileActivate() {
-    tiles = document.querySelector("[data-tile ='${number}']");
+    }, 500 * num);
 }
 
   setTimeout(function() {
     levelCounter++;
-}, 900);
+}, 500);
 /* round update */
 let updateRound = function(){
     rounds++;
@@ -104,11 +103,11 @@ let updateRound = function(){
 
 /* play round function */
 function playRound(nextSequence) {
-  $("number").css("background-color", 800);
+  $(number).css(500);
     nextSequence.forEach((number, index) => {
       setTimeout(() => {
         tileActivate(number);
-      }, (index + 1) * 550)
+      }, (index + 1) * 500)
   });
   return nextSequence;
 }
@@ -125,10 +124,10 @@ $("number").on("click", function(){
     if(matchArrays){
         playerArray = [];
         memoryCounter = [];
-        levelCounter = [i];
+        levelCounter = [];
         newMemory = [];
         setTimeout(function() {startMemory =
-            setInterval(start, 700);}, 700);
+            setInterval(start, 500);}, 500);
     }
 })
 function newRound() {
@@ -136,12 +135,12 @@ function newRound() {
   Container.addClass(unclickable);
   info.textContent = "wait for sequence to finish";
   heading.textContent = "level ${level} of 20";
-  sequence = [rounds];
+  sequence = hashtag;
   nextSequence.push(nextStep());
   playlevel(nextSequence);
   setTimeout(() => {
       playerTurn(turn);
-  }, level*600+1000);
+  }, level*500+1000);
 
   newRound.addEventListener(sequence);
   return sequence;
