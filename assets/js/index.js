@@ -6,44 +6,24 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
+let tiles = document.querySelector("number");
+let begin = document.querySelector("#btn");
 let memory = [];
 let sequence = [];
 let roundPattern = [];
 let user;
-let tiles;
 let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
 
-let begin = document.querySelector("#btn");
-
-let game = {
-  count: 0,
-  currentGame: [],
-  player: [],
-}
-function newGame(){
-  clearGame();
-}
-function clearGame() {
-    game.currentGame = [];
-    game.count = 0;
-}
-function nextRound() {
-    level += 1;
-    nextSequence = [tiles];
-}
 function nextLevel() {
     random = tiles[Math.floor(math.random) * number.length];
     return random;
 }
 
-function tileActivate() {
-    tiles = document.querySelector("[data-tile ='${number}']");
-}
 /* Start function */
-begin.addEventListener("click", (event) => {
+begin.addEventListener("click", function() {
       start = true;
       whichToChange();
       setTimeout(function() {startMemory =
@@ -63,8 +43,8 @@ function getColour(){
   return(colour[randomNum]);
 }
 function whichToChange(){
-  number = numberChange();
-  colour = getColour();
+    number = numberChange();
+    colour = getColour();
   $(number).css("background-color", colour);
 }
 
@@ -82,14 +62,14 @@ function show() {
   return hashtag;
 }
 
-function lightUp(name, num) {
+function lightUp(name, number) {
     setTimeout(function() {
-      if (name === num) {
+      if (name === number) {
         playerTurn = true;
       } else {
-      let pressed = name;
+        selected = name;
       }
-    }, 500 * num);
+    }, 500 * number);
 }
 
   setTimeout(function() {
@@ -103,20 +83,19 @@ let updateRound = function(){
 
 /* play round function */
 function playRound(nextSequence) {
-  $(number).css(500);
-    nextSequence.forEach((number, index) => {
-      setTimeout(() => {
+    nextSequence.forEach(function(number, index) {
+      setTimeout(function() {
         tileActivate(number);
-      }, (index + 1) * 500)
+      }, (index + 1) * 500);
   });
   return nextSequence;
 }
 /* matchArrays and match update */
-$("number").on("click", function(){
+begin.addEventListener("click", function(){
     if(tiles == true && true);
         userCounter++;
 
-    for(i = 0; i < userCounter.length; i ++){
+    for(let i = 0; i < userCounter.length; i ++){
         if (memory[i] != user[i]) {
             matchingArrays = false;
         }
@@ -148,5 +127,5 @@ function newRound() {
 
 console.log(memory, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, playLevel, levelCounter);
-console.log(game, level, updateRound, newRound);
+console.log(level, updateRound, newRound);
 console.log(memory, matchArrays);
