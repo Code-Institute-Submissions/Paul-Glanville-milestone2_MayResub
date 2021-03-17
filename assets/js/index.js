@@ -1,6 +1,5 @@
 /* Variables */
 let start = false;
-let cardsArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
 let memoryArray = [];
 let memoryCounter = [];
 let playerArray = [];
@@ -10,14 +9,14 @@ let level;
 let memory = [];
 let sequence;
 let user;
-let tiles = cardsArray;
+let tiles;
 let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
 
 /* Start function */
-$("#btn").on("click", function(_start) {
+$("#btn").on("click", function(start) {
       start = true;
       whichToChange();
       setTimeout(function() {startMemory =
@@ -26,7 +25,7 @@ $("#btn").on("click", function(_start) {
 });
 
 function numberChange(){
-  randomNum = Math.floor(Math.random() * 16 + 1)
+  randomNum = Math.floor(Math.random() * 16 + 1);
   let hashtag = "#";
   return hashtag.concat(randomNum.toString());
 }
@@ -58,7 +57,7 @@ function show() {
 function lightUp(name, num) {
   key.push(
     setTimeout(function() {
-      if (name === "run") { 
+      if (name === "num") {
         playerTurn = true;
       } else {
         pressed(name);
@@ -97,7 +96,6 @@ let i = rounds;
 function tileActivate() {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
-
 
   setTimeout(function() {
     levelCounter++;
@@ -156,6 +154,6 @@ function newRound() {
 
 
 console.log(memory, memoryArray, memoryCounter, rounds);
-console.log(playerCounter, playerArray, playLevel, levelCounter, cardsArray);
+console.log(playerCounter, playerArray, playLevel, levelCounter);
 console.log(game, level, updateRound, newRound);
 console.log(memory, matchArrays);
