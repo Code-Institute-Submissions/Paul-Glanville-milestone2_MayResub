@@ -16,10 +16,10 @@ let startMemory;
 let matchArrays = true;
 
 
-let randomTileNumber = (min, max) => {
+let randomTileRange = (min, max) => {
 return Math.floor(Math.random() * (max - min) + min);
 }
-let randomTilesPlaces = (randomTileNumber) => {
+let randomTilesPlaces = (randomTilesNumber) => {
     let totalNumberOfTiles = 16;
     let randomTilesPlaces = [];
     while (randomTilesPlaces.length < randomTilesNumber) {
