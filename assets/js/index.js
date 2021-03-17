@@ -18,11 +18,10 @@ let matchArrays = true;
 
 /* Start function */
 window.addEventListener('load', () => {
-    let tilesContainer = document.querySelector("#number");
+    let tilesContainer = document.querySelector("#tiles-container");
     let begin = document.querySelector("#btn");
     let tiles = tilesContainer.children;
     console.log(begin);
-    whichToChange();
     begin.addEventListener("click", function() {
         console.log('meme')
       start = true;
@@ -39,9 +38,11 @@ window.addEventListener('load', () => {
             }, ((level+ 1) * 1000))
         }
       })
+      level = level + 1; /* incrfease level by 1 */
     });
 
-    /*begin.addEventListener("click", () => {
+    /* whichToChange();
+    begin.addEventListener("click", () => {
     if (tiles == true && true);
         userCounter++;
 
