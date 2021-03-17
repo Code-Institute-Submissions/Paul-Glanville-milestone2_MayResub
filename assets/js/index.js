@@ -6,7 +6,6 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
-let key;
 let memory = [];
 let sequence = [];
 let roundPattern = [];
@@ -16,6 +15,8 @@ let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
+
+let begin = document.querySelector("#btn");
 
 let game = {
   count: 0,
@@ -42,12 +43,11 @@ function tileActivate() {
     tiles = document.querySelector("[data-tile ='${number}']");
 }
 /* Start function */
-$("#btn").on("click", function(start) {
+begin.addEventListener("click", (event) => {
       start = true;
-  window.show();
       whichToChange();
       setTimeout(function() {startMemory =
-          setInterval("sequence", 500);}, 500);
+          setInterval("begin", 500);}, 500);
         return startMemory;
 });
 
