@@ -16,6 +16,16 @@ let startMemory;
 let matchArrays = true;
 
 
+let randomTileNumber = (min, max) => {
+return Math.floor(Math.random() * (max - min) + min);
+}
+let randomTilesPlaces = (randomTileNumber) => {
+    let totalNumberOfTiles = 16;
+    let randomTilesPlaces = [];
+    while (randomTilesPlaces.length < randomTilesNumber) {
+    }
+}
+
 /* Start function */
 window.addEventListener('load', () => {
     let tilesContainer = document.querySelector("#tiles-container");
@@ -25,9 +35,9 @@ window.addEventListener('load', () => {
     begin.addEventListener("click", function() {
         console.log('meme')
       start = true;
-      tilePositions = randomTilesPositions(level)
-      console.log(tilePositions);
-      tilePositions.forEach((position, index) => {
+      tilePlaces = randomTilesPlaces(level)
+      console.log(tilePlaces);
+      tilePlaces.forEach((place, index) => {
       let tile = tiles[position - 1];
         if (tile) {
             setTimeout(() => { 
