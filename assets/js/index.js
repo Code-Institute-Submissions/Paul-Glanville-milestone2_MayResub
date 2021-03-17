@@ -6,8 +6,10 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
+let key;
 let memory = [];
-let sequence;
+let sequence = [];
+let roundPattern = [];
 let user;
 let tiles;
 let playLevel;
@@ -18,9 +20,10 @@ let matchArrays = true;
 /* Start function */
 $("#btn").on("click", function(start) {
       start = true;
+  window.show();
       whichToChange();
       setTimeout(function() {startMemory =
-          setInterval("game", 800);}, 800);
+          setInterval("sequence", 800);}, 800);
         return startMemory;
 });
 
@@ -42,28 +45,27 @@ function whichToChange(){
 }
 
 function show() {
-  console.log("Running show with: " + roundPattern);
-  patternCopy = [];
+  Pattern = [];
   let h = 0;
   for (h = 0; h <= roundPattern.length; h++) {
     if (h === roundPattern.length) {
-      lightUp("run", h);
+      lightUp("num", h);
     } else {
       lightUp(roundPattern[h], h);
     }
   }
+  console.log("Running show with: " + roundPattern);
+  return lightUp;
 }
 
 function lightUp(name, num) {
-  key.push(
     setTimeout(function() {
       if (name === "num") {
         playerTurn = true;
       } else {
         pressed(name);
       }
-    }, 800 * num)
-  );
+    }, 800 * num);
 }
 
 let game = {
@@ -85,12 +87,6 @@ function nextRound() {
 function nextLevel() {
     random = tiles[Math.floor(math.random) * tiles.length];
     return random;
-}
-
-let rounds = 0;
-let i = rounds;
-  for (i = 0; i < 20; i++) {
-    document.getElementById(i);
 }
 
 function tileActivate() {
@@ -150,10 +146,8 @@ function newRound() {
   newRound.addEventListener(sequence);
   return sequence;
 }
-/* new round update  */
 
-
-console.log(memory, memoryArray, memoryCounter, rounds);
+console.log(memory, memoryArray, memoryCounter);
 console.log(playerCounter, playerArray, playLevel, levelCounter);
 console.log(game, level, updateRound, newRound);
 console.log(memory, matchArrays);
