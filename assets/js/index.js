@@ -6,7 +6,7 @@ let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
 let level;
-let tiles = document.querySelector("number");
+let tiles = document.querySelector("#number");
 let begin = document.querySelector("#btn");
 let memory = [];
 let sequence = [];
