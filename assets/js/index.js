@@ -92,7 +92,7 @@ function playRound(nextSequence) {
 }
 /* matchArrays and match update */
 begin.addEventListener("click", function(){
-    if(tiles == true && true);
+    if (tiles == true && true);
         userCounter++;
 
     for(let i = 0; i < userCounter.length; i ++){
