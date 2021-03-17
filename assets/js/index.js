@@ -15,27 +15,6 @@ let userCounter = [];
 let startMemory;
 let matchArrays = true;
 
-function nextLevel() {
-    random = tiles[Math.floor(math.random) * number.length];
-    return random;
-}
-
-function numberChange(){
-  randomNum = Math.floor(Math.random() * 16 + 1);
-  let hashtag = "#";
-  return hashtag.concat(randomNum.toString());
-}
-
-function getColour(){
-  let colour = ["#bee9e8"];
-  randomNum = Math.floor(Math.random() * 4);
-  return(colour[randomNum]);
-}
-function whichToChange(){
-    number = numberChange();
-    colour = getColour();
-  $(number).css("background-color", colour);
-}
 
 /* Start function */
 window.addEventListener('load', () => {
@@ -46,8 +25,11 @@ window.addEventListener('load', () => {
     begin.addEventListener("click", function() {
         console.log('meme')
       start = true;
+      tilePositions = randomTilesPositions(level)
+      console.log(tilePositions);
+      tilePositions.forEach((position, index) => {
+      let tile = tiles[position - 1];
       whichToChange();
-      
     });
 
     begin.addEventListener("click", () => {
@@ -68,12 +50,28 @@ window.addEventListener('load', () => {
             setInterval(start, 500);}, 500);*/
     }
 })
-/* function nextLevel() {
+
+function numberChange(){
+  randomNum = Math.floor(Math.random() * 16 + 1);
+  let hashtag = "#";
+  return hashtag.concat(randomNum.toString());
+}
+
+function getColour(){
+  let colour = ["#bee9e8"];
+  randomNum = Math.floor(Math.random() * 4);
+  return(colour[randomNum]);
+}
+function whichToChange(){
+    number = numberChange();
+    colour = getColour();
+  $(number).css("background-color", colour);
+}
+
+function nextLevel() {
     random = tiles[Math.floor(math.random) * number.length];
     return random;
-} */
-
-
+}
 
 function show() {
   hashtag = ["#"];
@@ -98,8 +96,7 @@ function lightUp(name, number) {
       }
     }, 500 * number);
 }
-
-  setTimeout(function() {
+    setTimeout(function() {
     levelCounter++;
 }, 500);
 /* round update */
@@ -117,20 +114,3 @@ function playRound(nextSequence) {
   });
   return nextSequence;
 }
-/* matchArrays and match update */
-
-/*function newRound(level) {
-  level += 1;
-  Container.addClass(unclickable);
-  info.textContent = "wait for sequence to finish";
-  heading.textContent = "level ${level} of 20";
-  sequence = hashtag;
-  nextSequence.push(nextStep());
-  playlevel(nextSequence);
-  setTimeout(() => {
-      playerTurn(turn);
-  }, level*500+1000);
-
-  newRound.addEventListener(sequence);
-  return sequence;
-} */
