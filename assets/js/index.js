@@ -73,7 +73,7 @@ function show() {
   let h = 0;
   for (h = 0; h <= hashtag.length; h++) {
     if (h === hashtag.length) {
-      lightUp("num", h);
+      lightUp("run", h);
     } else {
       lightUp(hashtag[h], h);
     }
