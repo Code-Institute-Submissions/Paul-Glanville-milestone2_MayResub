@@ -5,9 +5,7 @@ let memoryCounter = [];
 let playerArray = [];
 let playerCounter = [];
 let levelCounter = [];
-let level;
-let tiles = document.querySelector("#number");
-let begin = document.querySelector("#btn");
+let level = 1;
 let memory = [];
 let sequence = [];
 let roundPattern = [];
@@ -21,15 +19,6 @@ function nextLevel() {
     random = tiles[Math.floor(math.random) * number.length];
     return random;
 }
-
-/* Start function */
-begin.addEventListener("click", function() {
-      start = true;
-      whichToChange();
-      setTimeout(function() {startMemory =
-          setInterval("begin", 500);}, 500);
-        return startMemory;
-});
 
 function numberChange(){
   randomNum = Math.floor(Math.random() * 16 + 1);
@@ -47,6 +36,44 @@ function whichToChange(){
     colour = getColour();
   $(number).css("background-color", colour);
 }
+
+/* Start function */
+window.addEventListener('load', () => {
+    let tiles = document.querySelector("#number");
+    let begin = document.querySelector("#btn");
+    let cards = cardsContainer.children;
+    console.log(begin);
+    begin.addEventListener("click", function() {
+        console.log('meme')
+      start = true;
+      whichToChange();
+      
+    });
+
+    begin.addEventListener("click", () => {
+    if (tiles == true && true);
+        userCounter++;
+
+    for(let i = 0; i < userCounter.length; i ++){
+        if (memory[i] != user[i]) {
+            matchingArrays = false;
+        }
+    }
+    if(matchArrays){
+        playerArray = [];
+        memoryCounter = [];
+        levelCounter = [];
+        newMemory = [];
+        /*setTimeout(function() {startMemory =
+            setInterval(start, 500);}, 500);*/
+    }
+})
+/* function nextLevel() {
+    random = tiles[Math.floor(math.random) * number.length];
+    return random;
+} */
+
+
 
 function show() {
   hashtag = ["#"];
@@ -91,25 +118,8 @@ function playRound(nextSequence) {
   return nextSequence;
 }
 /* matchArrays and match update */
-begin.addEventListener("click", function(){
-    if (tiles == true && true);
-        userCounter++;
 
-    for(let i = 0; i < userCounter.length; i ++){
-        if (memory[i] != user[i]) {
-            matchingArrays = false;
-        }
-    }
-    if(matchArrays){
-        playerArray = [];
-        memoryCounter = [];
-        levelCounter = [];
-        newMemory = [];
-        setTimeout(function() {startMemory =
-            setInterval(start, 500);}, 500);
-    }
-})
-function newRound() {
+/*function newRound(level) {
   level += 1;
   Container.addClass(unclickable);
   info.textContent = "wait for sequence to finish";
@@ -123,9 +133,4 @@ function newRound() {
 
   newRound.addEventListener(sequence);
   return sequence;
-}
-
-console.log(memory, memoryArray, memoryCounter);
-console.log(playerCounter, playerArray, playLevel, levelCounter);
-console.log(level, updateRound, newRound);
-console.log(memory, matchArrays);
+} */
