@@ -18,10 +18,11 @@ let matchArrays = true;
 
 /* Start function */
 window.addEventListener('load', () => {
-    let tiles = document.querySelector("#number");
+    let tilesContainer = document.querySelector("#number");
     let begin = document.querySelector("#btn");
-    let cards = cardsContainer.children;
+    let tiles = tilesContainer.children;
     console.log(begin);
+    whichToChange();
     begin.addEventListener("click", function() {
         console.log('meme')
       start = true;
@@ -29,10 +30,18 @@ window.addEventListener('load', () => {
       console.log(tilePositions);
       tilePositions.forEach((position, index) => {
       let tile = tiles[position - 1];
-      whichToChange();
+        if (tile) {
+            setTimeout(() => { 
+                tile.style.backgroundColor = '#bee9e8';
+            }, 0 + index * 500);
+            setTimeout(() => {
+                tile.style.backgroundColor = '#62b6cb';
+            }, ((level+ 1) * 1000))
+        }
+      })
     });
 
-    begin.addEventListener("click", () => {
+    /*begin.addEventListener("click", () => {
     if (tiles == true && true);
         userCounter++;
 
@@ -47,9 +56,9 @@ window.addEventListener('load', () => {
         levelCounter = [];
         newMemory = [];
         /*setTimeout(function() {startMemory =
-            setInterval(start, 500);}, 500);*/
-    }
-})
+            setInterval(start, 500);}, 500);
+    }*/
+});
 
 function numberChange(){
   randomNum = Math.floor(Math.random() * 16 + 1);
@@ -105,7 +114,7 @@ let updateRound = function(){
   $("showRounds").css("showRounds");
 };
 
-/* play round function */
+/* play round function 
 function playRound(nextSequence) {
     nextSequence.forEach(function(number, index) {
       setTimeout(function() {
@@ -113,4 +122,4 @@ function playRound(nextSequence) {
       }, (index + 1) * 500);
   });
   return nextSequence;
-}
+}*/
