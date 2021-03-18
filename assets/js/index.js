@@ -60,7 +60,7 @@ window.addEventListener('load', () => {
 
 function user() {
     let tilesContainer = document.querySelector("#tiles-container");
-    tilesContainer.addEventListener('click', (event) => {
+    tilesContainer.addEventListener('click', (event) => {/* this part of code is supposed to provide one function/variable name to call the other id's within #tiles-container, to allow the tiles to change shade or colour upon being clicked. */
         let tiles = event.tiles;
         switch(tiles.id) {
             case '1':
