@@ -60,13 +60,24 @@ window.addEventListener('load', () => {
 
 tiles.addEventListener("click", function(){
     if (tile) {
-            lightUp(() => { /* changes the colour of the tiles after a certain amount of time */
-                tile.style.backgroundColor = '#bee9e8';
-            }, 0 + index * 500);
-            lightUp(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tile.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-        }
+        lightUp(() => { /* changes the colour of the tiles after a certain amount of time */
+            tile.style.backgroundColor = '#bee9e8';
+        });
+        setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
+            tile.style.backgroundColor = '#62b6cb';
+        }, ((level+ 1) * 1000))
+    }
+    function lightUp(name, tile) {
+        tile.push(
+            setTimeout(function() {
+                if (name === "run") { 
+                playerTurn = true;
+                } else {
+                pressed(name);
+                }
+            }, 800 * num)
+        );
+    }
 });
 
 /*tiles.addEventListener("click", () => {
@@ -75,11 +86,7 @@ tiles.addEventListener("click", function(){
     for(let i = 0; i < userCounter.length; i ++){
         if (memory[i] != user[i]) {
             matchArrays = false;
-        }else{ matchArrays = true; {
-        playerArray = [];
-        memoryCounter = [];
-        levelCounter = [];
-        newMemory = [];  
+        }else{ matchArrays = true; { 
         }
     }
 
