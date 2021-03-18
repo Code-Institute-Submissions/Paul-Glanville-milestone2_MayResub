@@ -45,7 +45,7 @@ the start button and round display would show on the left side of the screen whe
 
 ### Credit
 
-Excellence mentor for advise and guidance with the language of javascript and direction of the project.
+Excellence mentor for advice and guidance with the language of javascript and direction of the project, also provided a block of javascript in game.js that i had taken inspiration of and personalised in index.js
 
 Code Institute material for refencing and material provided for the learning of functions and content.
 

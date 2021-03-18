@@ -13,6 +13,7 @@ let playLevel;
 let userCounter = [];
 let startMemory;
 let matchArrays = true;
+let playerTurn = false;
 
 
 let randomTileRange = (min, max) => { /* this is the range in which the tiles are set and has a minimum and maximum */
@@ -56,18 +57,18 @@ window.addEventListener('load', () => {
       level = level + 1; /* incrfease level by 1 */
     });
 });
-let playerTurn = false;
+
 this.addEventListener("click", (place) => {
     playerTurn = true;
     let tilesContainer = document.querySelector("#tiles-container");
     let tiles = tilesContainer.children;
     console.log(tiles);
     tilesContainer.addEventListener("click", () => {
-    let tile = tiles[place - 1];
+    let tile = tiles[place];
         if (tile) {
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                    tile.style.backgroundColor = '#bee9e8';
-                }, 0 + index * 500)
+            setTimeout("click", () => { /* changes the colour of the tiles after a certain amount of time */
+                tile.style.backgroundColor = '#bee9e8';
+            });
             setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
                 tile.style.backgroundColor = '#62b6cb';
             }, ((level+ 1) * 1000))
