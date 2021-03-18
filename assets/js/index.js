@@ -59,140 +59,64 @@ window.addEventListener('load', () => {
 
 
 function user() {
-    playerTurn = true;
     let tilesContainer = document.querySelector("#tiles-container");
-    tilesContainer.addEventListener("click", (event) => {
+    tilesContainer.addEventListener('click', (event) => {
         let tiles = event.tiles;
-        if (tiles.id) {
-            '1';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('1');
-            '2';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('2');
-            '3';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('3');
-            '4';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('4');
-            '5';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('5');
-            '6';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('6');
-            '7';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('7');
-            '8';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('8');
-            '9';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('9');
-            '10';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('10');
-            '11';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('11');
-            '12';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('12');
-            '13';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('13');
-            '14';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('14');
-            '15';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('15');
-            '16';
-            setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tiles.style.backgroundColor = '#bee9e8';
-            },  0 + index * 500);
-            setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-                tiles.style.backgroundColor = '#62b6cb';
-            }, ((level+ 1) * 1000))
-            console.log('16');
+        switch(tiles.id) {
+            case '1':
+                console.log('1');
+                break;
+            case '2':
+                console.log('2');
+                break;
+            case '3':
+                console.log('3');
+                break
+            case '4':
+                console.log('4');
+                break;
+            case '5':
+                console.log('5');
+                break;
+            case '6':
+                console.log('6');
+                break;
+            case '7':
+                console.log('7');
+                break;
+            case '8':
+                console.log('8');
+                break;
+            case '9':
+                console.log('9');
+                break;
+            case '10':
+                console.log('10');
+                break;
+            case '11':
+                console.log('11');
+                break;
+            case '12':
+                console.log('12');
+                break;
+            case '13':
+                console.log('13');
+                break;
+            case '14':
+                console.log('14');
+                break;
+            case '15':
+                break;
+            case'16':
+                console.log('16');
+                break;
         }
+        setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+            tiles.style.backgroundColor = '#bee9e8';
+        },  0 + index * 500);
+        setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
+            tiles.style.backgroundColor = '#62b6cb';
+        }, ((level+ 1) * 1000))
     });
 };
 
