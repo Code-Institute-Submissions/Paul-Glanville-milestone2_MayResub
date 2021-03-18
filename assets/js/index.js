@@ -23,7 +23,13 @@ let randomTilesPlaces = (randomTilesNumber) => {
     let totalNumberOfTiles = 16;
     let randomTilesPlaces = [];
     while (randomTilesPlaces.length < randomTilesNumber) {
+        nextTilePlace = randomTileRange(1, totalNumberOfTiles);
+    console.log(nextTilePlace);
+    if (!randomTilesPlaces.includes(nextTilePlace)) {
+      randomTilesPlaces.push(nextTilePlace)
     }
+  }
+  return randomTilesPlaces;
 }
 
 /* Start function */
@@ -38,7 +44,7 @@ window.addEventListener('load', () => {
       tilePlaces = randomTilesPlaces(level)
       console.log(tilePlaces);
       tilePlaces.forEach((place, index) => {
-      let tile = tiles[position - 1];
+      let tile = tiles[place - 1];
         if (tile) {
             setTimeout(() => { 
                 tile.style.backgroundColor = '#bee9e8';
