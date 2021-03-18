@@ -57,12 +57,13 @@ window.addEventListener('load', () => {
     });
 });
 let playerTurn = false;
-this.addEventListener("click", () => {
+this.addEventListener("click", (place) => {
+    playerTurn = true;
     let tilesContainer = document.querySelector("#tiles-container");
     let tiles = tilesContainer.children;
     console.log(tiles);
-    tilesContainer.addEventListener("click", (place) => {
-        let tile = tiles[place - 1];
+    tilesContainer.addEventListener("click", () => {
+    let tile = tiles[place - 1];
         if (tile) {
             setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     tile.style.backgroundColor = '#bee9e8';
@@ -71,22 +72,6 @@ this.addEventListener("click", () => {
                 tile.style.backgroundColor = '#62b6cb';
             }, ((level+ 1) * 1000))
         }
-        console.log(place);
-        name = tiles;
-        pressed = tilePlaces;
-        lightUp = pressed;
-        console.log(lightUp, pressed);
-        lightUp.forEach((name, tiles) => {
-            tiles.push(
-                setTimeout(function() {
-                    if (name === "run") { 
-                        playerTurn = true;
-                    } else {
-                        pressed(name);
-                    }
-                }, 800 * tiles)
-            )
-        })
     });
 });  
 
