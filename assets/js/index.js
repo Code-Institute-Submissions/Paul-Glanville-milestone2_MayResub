@@ -66,7 +66,7 @@ this.addEventListener("click", (place) => {
     tilesContainer.addEventListener("click", () => {
     let tile = tiles[place];
         if (tile) {
-            setTimeout("click", () => { /* changes the colour of the tiles after a certain amount of time */
+            lightUp(() => { /* changes the colour of the tiles after a certain amount of time */
                 tile.style.backgroundColor = '#bee9e8';
             });
             setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
