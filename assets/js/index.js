@@ -3,7 +3,6 @@ let start = false;
 let memoryArray = [];
 let memoryCounter = [];
 let playerArray = [];
-let playerCounter = [];
 let levelCounter = [];
 let level = 1;
 let memory = [];
@@ -40,47 +39,59 @@ window.addEventListener('load', () => {
     console.log(begin);
     begin.addEventListener("click", function() {
         console.log('meme')
-      start = true;
-      tilePlaces = randomTilesPlaces(level)
-      console.log(tilePlaces);
-      tilePlaces.forEach((place, index) => {
-      let tile = tiles[place - 1];
+        start = true;
+        tilePlaces = randomTilesPlaces(level)
+        console.log(tilePlaces);
+        tilePlaces.forEach((place, index) => {
+        let tile = tiles[place - 1];
+            if (tile) {
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+                    tile.style.backgroundColor = '#bee9e8';
+                }, 0 + index * 500);
+                setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
+                    tile.style.backgroundColor = '#62b6cb';
+                }, ((level+ 1) * 1000))
+            }
+        })
+      level = level + 1; /* incrfease level by 1 */
+    });
+});
+let playerTurn = false;
+this.addEventListener("click", () => {
+    let tilesContainer = document.querySelector("#tiles-container");
+    let tiles = tilesContainer.children;
+    console.log(tiles);
+    tilesContainer.addEventListener("click", (place) => {
+        let tile = tiles[place - 1];
         if (tile) {
             setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-                tile.style.backgroundColor = '#bee9e8';
-            }, 0 + index * 500);
+                    tile.style.backgroundColor = '#bee9e8';
+                }, 0 + index * 500)
             setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
                 tile.style.backgroundColor = '#62b6cb';
             }, ((level+ 1) * 1000))
         }
-      })
-      level = level + 1; /* incrfease level by 1 */
+        console.log(place);
+        name = tiles;
+        pressed = tilePlaces;
+        lightUp = pressed;
+        console.log(lightUp, pressed);
+        lightUp.forEach((name, tiles) => {
+            tiles.push(
+                setTimeout(function() {
+                    if (name === "run") { 
+                        playerTurn = true;
+                    } else {
+                        pressed(name);
+                    }
+                }, 800 * tiles)
+            )
+        })
     });
-});
+});  
 
-tiles.addEventListener("click", function(){
-    if (tile) {
-        lightUp(() => { /* changes the colour of the tiles after a certain amount of time */
-            tile.style.backgroundColor = '#bee9e8';
-        });
-        setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-            tile.style.backgroundColor = '#62b6cb';
-        }, ((level+ 1) * 1000))
-    }
-    function lightUp(name, tile) {
-        tile.push(
-            setTimeout(function() {
-                if (name === "run") { 
-                playerTurn = true;
-                } else {
-                pressed(name);
-                }
-            }, 800 * num)
-        );
-    }
-});
 
-/*tiles.addEventListener("click", () => {
+/*let matchArrays = tiles() {
     if (matchArrays == true && true)
     console.log(matchArrays);
     for(let i = 0; i < userCounter.length; i ++){
