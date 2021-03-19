@@ -14,7 +14,7 @@ let startMemory;
 let matchArrays = true;
 let playerTurn = false;
 
-
+/* this section to the end of the start button section is inspired and by the content in game.js that my mentor has shown me and i have edited to personalise it more of the variable names and declarations */
 let randomTileRange = (min, max) => { /* this is the range in which the tiles are set and has a minimum and maximum */
 return Math.floor(Math.random() * (max - min) + min);
 }
