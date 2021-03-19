@@ -32,12 +32,12 @@ let randomTilesPlaces = (randomTilesNumber) => { /* selects and lights up a rand
 }
 
 /* Start function */
-window.addEventListener('load', () => {
+window.addEventListener('load', () => { /* listens out for when the window is opened for the variables and functions */
     let tilesContainer = document.querySelector("#tiles-container");
     let begin = document.querySelector("#btn");
     let tiles = tilesContainer.children;
     console.log(begin);
-    begin.addEventListener("click", function() {
+    begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#btn" id under the variable name */
         console.log('meme')
         start = true;
         tilePlaces = randomTilesPlaces(level)
