@@ -15,6 +15,13 @@
 
 ---
 
+##Wireframes
+![Project desktop](/assets/wireframes/project-desktop.pdf)
+![Project tablet](/assets/wireframes/project-desktop.pdf)
+![Project mobile](/assets/wireframes/project-desktop.pdf)
+
+---
+
 ## Purpose of project
 The purpose with the creation of the project is to create a memory game with 16 Tiles from 1 - 16 and number as such. 
 The finished product should allow the user to view a sequence with increasing difficulty levels as the user succeeds with each win of a round.
