@@ -13,6 +13,8 @@ let userCounter = [];
 let startMemory;
 let matchArrays = true;
 let playerTurn = false;
+let currentTilePlaces = [];
+let playEnabled = true;
 
 /* this section to the end of the start button section is inspired and by the content in game.js that my mentor has shown me and i have edited to personalise it more of the variable names and declarations */
 let randomTileRange = (min, max) => { /* this is the range in which the tiles are set and has a minimum and maximum */
@@ -25,24 +27,71 @@ let randomTilesPlaces = (randomTilesNumber) => { /* selects and lights up a rand
         nextTilePlace = randomTileRange(1, totalNumberOfTiles);
     console.log(nextTilePlace);
     if (!randomTilesPlaces.includes(nextTilePlace)) {
-      randomTilesPlaces.push(nextTilePlace)
+      randomTilesPlaces.push(nextTilePlace);
     }
   }
   return randomTilesPlaces;
 }
 
+const tileIdToNumber = (tileId) => {
+    switch(tileId) {
+            case 'one':
+                return 1;
+            case 'two':
+                return 2;
+            case 'three':
+                return 3;
+            case 'four':
+                return 4;
+            case 'five':
+                return 5;
+            case 'six':
+                return 6;
+            case 'seven':
+                return 7;
+            case 'eight':
+                return 8;
+            case 'nine':
+                return 9;
+            case 'ten':
+                return 10;
+            case 'eleven':
+                return 11;
+            case 'twelve':
+                return 12;
+            case 'thirteen':
+                return 13;
+            case 'fourteen':
+                return 14;
+            case 'fifteen':
+                return 15;
+            case'sixteen':
+                return 16;
+        }
+}
+
+const updateLevelsInfo = () => {
+    document.querySelector("#showRounds").innerHTML = "Round " +  level;
+}
+
 /* Start function */
 window.addEventListener('load', () => { /* listens out for when the window is opened for the variables and functions */
     let tilesContainer = document.querySelector("#tiles-container");
-    let begin = document.querySelector("#btn");
+    let begin = document.querySelector("#start-btn");
+    let reset = document.querySelector("#reset-btn");
     let tiles = tilesContainer.children;
     console.log(begin);
-    begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#btn" id under the variable name */
-        console.log('meme')
+    begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#start-btn" id under the variable name */
+        if (playEnabled === false) {
+            return
+        }
+
         start = true;
-        tilePlaces = randomTilesPlaces(level)
-        console.log(tilePlaces);
-        tilePlaces.forEach((place, index) => {
+        playEnabled = false;
+
+        currentTilePlaces = randomTilesPlaces(level)
+        console.log(currentTilePlaces);
+        currentTilePlaces.forEach((place, index) => {
         let tile = tiles[place - 1];
             if (tile) {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
@@ -50,73 +99,54 @@ window.addEventListener('load', () => { /* listens out for when the window is op
                 }, 0 + index * 500);
                 setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
                     tile.style.backgroundColor = '#62b6cb';
+                    if (index === currentTilePlaces.length - 1) {
+                        playEnabled = true;
+                    }
                 }, ((level+ 1) * 1000))
             }
         })
       level = level + 1; /* incrfease level by 1 */
+      updateLevelsInfo();
     });
+
+    reset.addEventListener("click", function() { /* comment to be updated */
+        level = 1;
+        updateLevelsInfo();
+    });
+
+    setupTileClickListener();
 });
 
 
-function user() {
+function setupTileClickListener() {
     let tilesContainer = document.querySelector("#tiles-container");
     tilesContainer.addEventListener('click', (event) => {/* this part of code is supposed to provide one function/variable name to call the other id's within #tiles-container, to allow the tiles to change shade or colour upon being clicked. */
-        let tiles = event.tiles;
-        switch(tiles.id) {
-            case '1':
-                console.log('1');
-                break;
-            case '2':
-                console.log('2');
-                break;
-            case '3':
-                console.log('3');
-                break
-            case '4':
-                console.log('4');
-                break;
-            case '5':
-                console.log('5');
-                break;
-            case '6':
-                console.log('6');
-                break;
-            case '7':
-                console.log('7');
-                break;
-            case '8':
-                console.log('8');
-                break;
-            case '9':
-                console.log('9');
-                break;
-            case '10':
-                console.log('10');
-                break;
-            case '11':
-                console.log('11');
-                break;
-            case '12':
-                console.log('12');
-                break;
-            case '13':
-                console.log('13');
-                break;
-            case '14':
-                console.log('14');
-                break;
-            case '15':
-                break;
-            case'16':
-                console.log('16');
-                break;
+        const clickElement = event.target;
+        if (clickElement.classList.contains("box")) {
+            console.log(clickElement);
+            const tileNumeber = tileIdToNumber(clickElement.id)
+            console.log(tileNumeber);
+            console.log(currentTilePlaces);
+
+            if (currentTilePlaces.includes(tileNumeber)) {
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+                    clickElement.style.backgroundColor = '#bee9e8';
+                }, 500);
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+                    clickElement.style.backgroundColor = '#62b6cb';
+                }, 1500);
+            } else {
+                setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
+                    clickElement.style.backgroundColor = 'red';
+                }, 500);
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+                    clickElement.style.backgroundColor = '#62b6cb';
+                }, 1500);
+            }
         }
-        setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
-            tiles.style.backgroundColor = '#bee9e8';
-        },  0 + index * 500);
-        setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
-            tiles.style.backgroundColor = '#62b6cb';
-        }, ((level+ 1) * 1000))
+        let tiles = event.tiles;
+        
+        
     });
 };
 
