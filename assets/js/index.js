@@ -70,7 +70,7 @@ const tileIdToNumber = (tileId) => {
         }
 }
 
-const updateLevelsInfo = () => {
+const updateLevelsInfo = () => { /* updates the level counter on each new round */
     document.querySelector("#showRounds").innerHTML = "Round " +  level;
 }
 
@@ -109,7 +109,7 @@ window.addEventListener('load', () => { /* listens out for when the window is op
       updateLevelsInfo();
     });
 
-    reset.addEventListener("click", function() { /* comment to be updated */
+    reset.addEventListener("click", function() { /* resets the level counter and progress once reset button has been clicked */
         level = 1;
         updateLevelsInfo();
     });
@@ -117,7 +117,7 @@ window.addEventListener('load', () => { /* listens out for when the window is op
     setupTileClickListener();
 });
 
-
+/*  */
 function setupTileClickListener() {
     let tilesContainer = document.querySelector("#tiles-container");
     tilesContainer.addEventListener('click', (event) => {/* this part of code is supposed to provide one function/variable name to call the other id's within #tiles-container, to allow the tiles to change shade or colour upon being clicked. */

@@ -55,7 +55,7 @@ The second issue i have been facing is the tiles not lighting up upon being clic
 
 ### Credit
 
-Excellence mentor for advice and guidance with the language of javascript and direction of the project, also provided a block of javascript in game.js that i had taken inspiration of and personalised in index.js
+Excellence mentor - for advice and guidance with the language of javascript and direction of the project, also provided a block of javascript in game.js that i had taken inspiration of and personalised in index.js and helped with javascript for the reset and lighting up of tiles when clicked successfully and in error of sequence.
 
 Code Institute material for refencing and material provided for the learning of functions and content.
 
