@@ -32,7 +32,7 @@ let randomTilesPlaces = (randomTilesNumber) => { /* selects and lights up a rand
   }
   return randomTilesPlaces;
 }
-
+/* Converts the id name into the number it represents */
 const tileIdToNumber = (tileId) => {
     switch(tileId) {
             case 'one':
@@ -117,7 +117,7 @@ window.addEventListener('load', () => { /* listens out for when the window is op
     setupTileClickListener();
 });
 
-/*  */
+/* with this function the tiles should each light up once clicked by the user, if correct the same colour as the sequence but if incorrect then they light up red. */
 function setupTileClickListener() {
     let tilesContainer = document.querySelector("#tiles-container");
     tilesContainer.addEventListener('click', (event) => {/* this part of code is supposed to provide one function/variable name to call the other id's within #tiles-container, to allow the tiles to change shade or colour upon being clicked. */
@@ -131,14 +131,14 @@ function setupTileClickListener() {
             if (currentTilePlaces.includes(tileNumeber)) {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#bee9e8';
-                }, 500);
+                }, 100);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                 }, 1500);
             } else {
-                setTimeout(() => { /* reverts the tiles back to their original colour at end of sequence */
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = 'red';
-                }, 500);
+                }, 100);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                 }, 1500);
