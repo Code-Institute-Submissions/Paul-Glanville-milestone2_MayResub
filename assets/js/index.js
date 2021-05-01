@@ -82,7 +82,7 @@ window.addEventListener('load', () => { /* listens out for when the window is op
     let tiles = tilesContainer.children;
     console.log(begin);
     begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#start-btn" id under the variable name */
-        alert("Welcome let the round Begin!");  // display string message
+        alert("Welcome, let the round Begin!");  // display string message
         if (playEnabled === false) {
             return 
         }

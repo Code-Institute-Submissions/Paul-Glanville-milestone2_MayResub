@@ -61,6 +61,7 @@ body{
 }
 
 .instructions{ 
+    margin-left: 20%;
     padding: 30px;
     font-size: 1.5em;
 }
