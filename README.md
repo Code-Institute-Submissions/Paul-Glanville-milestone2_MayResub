@@ -41,6 +41,10 @@ after a sequence is played the user will then be required to click on the same t
 
 ## User Stories
 
+As a user it is important to understand the rules of the game, and the instructions on how to play. 
+as the player and can clearly see the game layout, to read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
+
+
 ---
 
 ## Testing
@@ -49,6 +53,9 @@ the start button and round display would show on the left side of the screen whe
 
 while testing the project, had a continuous problem i had struggled to solve, the first problem was getting the start button to place a sequence, but that now works and runs a random sequnce with increasing tiles on each level.
 The second issue i have been facing is the tiles not lighting up upon being clicked therefore no comparison sequnce can be made as the tiles do not light up and it does not recognise the tile is being clicked.
+
+When creating the alert pop-ups they appear for every tile in the sequence instead of just the once at the end of each sequence.
+start button so far is required to be clicked to start each round and round display counter is one round ahead that it actually is.
 
 
 ---
