@@ -82,8 +82,9 @@ window.addEventListener('load', () => { /* listens out for when the window is op
     let tiles = tilesContainer.children;
     console.log(begin);
     begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#start-btn" id under the variable name */
+        alert("Welcome let the round Begin!");  // display string message
         if (playEnabled === false) {
-            return
+            return 
         }
 
         start = true;
@@ -134,13 +135,15 @@ function setupTileClickListener() {
                 }, 100);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
-                }, 1500);
+                    alert("Congratulations! next round, Get ready!");  // display string message
+                }, 1500); 
             } else {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = 'red';
                 }, 100);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
+                    alert("Bad luck! Try again");  // display string message
                 }, 1500);
             }
         }
