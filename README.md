@@ -36,7 +36,7 @@ after a sequence is played the user will then be required to click on the same t
 
 ## Function
 
-### Star Button - when clicked will start the game at level 1 and run a sequnce, once clicked
+### Star Button - when clicked will start the game at level 1 and run a sequnce, once clicked. will also start each round upon success.
 ### Tiles/ Numbered Boxes - should light up in sequence after a few seconds once the start button has been clicked, and once the sequence to each round has played the user is then to click on each tile in the order in which they have seen and can remember for that specific round/level.
 ### Round Counter - Displays each level/Round that the user is currently on  but will refresh to 1 if the user does not successfully click the tiles in order.
 ### dialogue box to display either the success or failure of each round. (in progress for the time being, will be included at later time.)
@@ -45,8 +45,10 @@ after a sequence is played the user will then be required to click on the same t
 
 ## User Stories
 
-As a user it is important to understand the rules of the game, and the instructions on how to play. 
-As the player I can clearly see the game layout, read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
+As the user it is important to understand the rules of the game, and the instructions on how to play which are displayed below the game view. 
+As the player I can clearly see the game layout, read the instructions and rules when I scroll down passed the game layout and everything is on one page for easy access.
+
+As the levels increase the user is expected to witness an increase in difficulty as well until all rounds are cleared or an incorrect tile is clicked and game is reset.
 
 
 ---
@@ -59,6 +61,9 @@ Languages used are HTML, CSS and JavaScript.
 
 ## Deployment
 This project was created on GitHub, once selecting new repository and choosing a name for the project click on the green button that says GitPod which opens a new workspace.
+using the commit to continuously save progress to Github.
+
+after creating the repository it was given a server address in the settings and providing a link to use for viewing the site/Game without going into gitpod.
 
 
 ---
