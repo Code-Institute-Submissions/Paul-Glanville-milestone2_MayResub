@@ -138,7 +138,7 @@ function setupTileClickListener() {
                 }, 1500);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     alert("Congratulations! next round, Get ready!");
-                }, (index === currentTilePlaces.length));
+                }, currentTilePlaces.length);
             } else {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = 'red';
@@ -146,6 +146,8 @@ function setupTileClickListener() {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                     alert("Bad luck! Try again");  // display string message
+                    level = 1;
+                    updateLevelsInfo();
                 }, 1500);
             }
         
