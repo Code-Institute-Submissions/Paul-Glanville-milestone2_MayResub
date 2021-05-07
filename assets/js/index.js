@@ -1,25 +1,13 @@
 /* Variables */
 let start = false;
-let memoryArray = [];
-let memoryCounter = [];
-let playerArray = [];
-let levelCounter = [];
 let level = 1;
-let memory = [];
-let sequence = [];
-let roundPattern = [];
-let playLevel;
-let userCounter = [];
-let startMemory;
-let matchArrays = true;
-let playerTurn = false;
 let currentTilePlaces = [];
 let playEnabled = true;
 
 /* this section to the end of the start button section is inspired and by the content in game.js that my mentor has shown me and i have edited to personalise it more of the variable names and declarations */
 let randomTileRange = (min, max) => { /* this is the range in which the tiles are set and has a minimum and maximum */
 return Math.floor(Math.random() * (max - min) + min);
-}
+};
 let randomTilesPlaces = (randomTilesNumber) => { /* selects and lights up a random tile in a sequence*/
     let totalNumberOfTiles = 16;
     let randomTilesPlaces = [];
@@ -31,7 +19,7 @@ let randomTilesPlaces = (randomTilesNumber) => { /* selects and lights up a rand
     }
   }
   return randomTilesPlaces;
-}
+};
 /* Converts the id name into the number it represents */
 const tileIdToNumber = (tileId) => {
     switch(tileId) {
@@ -68,11 +56,17 @@ const tileIdToNumber = (tileId) => {
             case'sixteen':
                 return 16;
         }
-}
+};
 
 const updateLevelsInfo = () => { /* updates the level counter on each new round */
     document.querySelector("#showRounds").innerHTML = "Round " +  level;
-}
+};
+
+const resetGame = () => {
+    level = 1;
+    updateLevelsInfo();
+    playEnabled = true;
+};
 
 /* Start function */
 window.addEventListener('load', () => { /* listens out for when the window is opened for the variables and functions */
@@ -80,17 +74,16 @@ window.addEventListener('load', () => { /* listens out for when the window is op
     let begin = document.querySelector("#start-btn");
     let reset = document.querySelector("#reset-btn");
     let tiles = tilesContainer.children;
-    console.log(begin);
     begin.addEventListener("click", function() { /* listens out for when the start button has been clicked and calls the "#start-btn" id under the variable name */
         alert("Welcome, let the round Begin!");  // display string message
         if (playEnabled === false) {
-            return 
+            return;
         }
 
         start = true;
         playEnabled = false;
 
-        currentTilePlaces = randomTilesPlaces(level)
+        currentTilePlaces = randomTilesPlaces(level);
         console.log(currentTilePlaces);
         currentTilePlaces.forEach((place, index) => {
         let tile = tiles[place - 1];
@@ -103,20 +96,20 @@ window.addEventListener('load', () => { /* listens out for when the window is op
                     if (index === currentTilePlaces.length - 1) {
                         playEnabled = true;
                     }
-                }, ((level+ 1) * 1000))
+                }, ((level+ 1) * 1000));
             }
-        })
-      level = level + 1; /* incrfease level by 1 */
-      updateLevelsInfo();
+        });
+      
     });
 
     reset.addEventListener("click", function() { /* resets the level counter and progress once reset button has been clicked */
-        level = 1;
-        updateLevelsInfo();
+        resetGame();
     });
 
     setupTileClickListener();
 });
+
+
 
 /* with this function the tiles should each light up once clicked by the user, if correct the same colour as the sequence but if incorrect then they light up red. */
 function setupTileClickListener() {
@@ -125,17 +118,28 @@ function setupTileClickListener() {
         const clickElement = event.target;
         if (clickElement.classList.contains("box")) {
             console.log(clickElement);
-            const tileNumeber = tileIdToNumber(clickElement.id)
-            console.log(tileNumeber);
+            const tileNumber = tileIdToNumber(clickElement.id);
+            console.log(tileNumber);
             console.log(currentTilePlaces);
 
-            if (currentTilePlaces.includes(tileNumeber)) {
+            if (currentTilePlaces.includes(tileNumber)) {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#bee9e8';
                 }, 100);
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                 }, 1500);
+                currentTilePlaces = currentTilePlaces.filter((tile) => {
+                    return tile !== tileNumber;
+                });
+                if (currentTilePlaces.length == 0) {
+                    setTimeout(() => {
+                        alert("Congratulations! next round, Click Start and Get ready!");
+                        level = level + 1; /* incrfease level by 1 */
+                        updateLevelsInfo();
+                    }, 1500);
+                    return;
+                }
             } else {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = 'red';
@@ -143,42 +147,14 @@ function setupTileClickListener() {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                     alert("Bad luck! Try again");  // display string message
-                    level = 1;
-                    updateLevelsInfo();
-                }, 1500);
+                    resetGame();
+                }, 1000);
             }
             
-            if (playerArray.length === currentTilePlaces.length) {
-                setTimeout(() => {
-                    alert("Congratulations! next round, Click Start and Get ready!");
-                }, 100);
-                return;
-            }
+            
 
-        
-            //setTimeout(() => {
-            //    if(currentIndex === (currentTilePlaces.length)) { 
-            //        move(currentIndex + 1);
-            //    } else {
-            //        move();
-            //    }
-            //});
         }
         let tiles = event.tiles;
-        // alert("Congratulations! next round, Get ready!")  // display string message
         
     });
-};
-
-
-/*let matchArrays = tiles() {
-    if (matchArrays == true && true)
-    console.log(matchArrays);
-    for(let i = 0; i < userCounter.length; i ++){
-        if (memory[i] != user[i]) {
-            matchArrays = false;
-        }else{ matchArrays = true; { 
-        }
-    }
-
-});*/
+}

@@ -7,12 +7,14 @@
 
 ## index
 
-### Wireframes
-### Purpose of project
-### functions
-### User Stories
-### Testing
-### credit
+#### Wireframes
+#### Purpose of project
+#### functions
+#### User Stories
+#### Languages
+#### Deployment
+#### Testing
+#### credit
 
 ---
 
@@ -44,7 +46,19 @@ after a sequence is played the user will then be required to click on the same t
 ## User Stories
 
 As a user it is important to understand the rules of the game, and the instructions on how to play. 
-As the player and can clearly see the game layout, to read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
+As the player I can clearly see the game layout, read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
+
+
+---
+
+## Languages
+
+Languages used are HTML, CSS and JavaScript.
+
+---
+
+## Deployment
+This project was created on GitHub, once selecting new repository and choosing a name for the project click on the green button that says GitPod which opens a new workspace.
 
 
 ---
@@ -54,11 +68,15 @@ while creating and testing the product there was an ongoing issue where it would
 the start button and round display would show on the left side of the screen when viewing the product.
 
 while testing the project, had a continuous problem i had struggled to solve, the first problem was getting the start button to place a sequence, but that now works and runs a random sequnce with increasing tiles on each level.
-The second issue i have been facing is the tiles not lighting up upon being clicked therefore no comparison sequnce can be made as the tiles do not light up and it does not recognise the tile is being clicked.
+The second issue I have been facing is the tiles not lighting up upon being clicked therefore no comparison sequnce can be made as the tiles do not light up and it does not recognise the tile is being clicked.
 
 When creating the alert pop-ups they appear for every tile in the sequence instead of just the once at the end of each sequence.
 start button so far is required to be clicked to start each round and round display counter is one round ahead that it actually is.
 
+
+JavaScript has been checked in JSHint
+CSS checked in validator and passed with no errors.
+HTML checked in validator.
 
 ---
 
