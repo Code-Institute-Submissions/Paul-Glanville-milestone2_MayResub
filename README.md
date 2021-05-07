@@ -7,6 +7,7 @@
 
 ## index
 
+### Wireframes
 ### Purpose of project
 ### functions
 ### User Stories
@@ -15,7 +16,8 @@
 
 ---
 
-##Wireframes
+## Wireframes
+
 ![Project desktop](/assets/wireframes/project-desktop.pdf)
 ![Project tablet](/assets/wireframes/project-desktop.pdf)
 ![Project mobile](/assets/wireframes/project-desktop.pdf)
@@ -42,7 +44,7 @@ after a sequence is played the user will then be required to click on the same t
 ## User Stories
 
 As a user it is important to understand the rules of the game, and the instructions on how to play. 
-as the player and can clearly see the game layout, to read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
+As the player and can clearly see the game layout, to read the instructions and rules i scroll down passed the game layout and everything is on one page for easy access.
 
 
 ---
