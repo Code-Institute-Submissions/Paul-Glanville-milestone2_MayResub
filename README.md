@@ -49,7 +49,7 @@ As the user it is important to understand the rules of the game, and the instruc
 As the player I can clearly see the game layout, read the instructions and rules when I scroll down passed the game layout and everything is on one page for easy access.
 
 As the levels increase the user is expected to witness an increase in difficulty as well until all rounds are cleared or an incorrect tile is clicked and game is reset.
-
+The user receives a notification po-up for each time the start button, wrong tile or when the sequence input by the player has been successful 
 
 ---
 
