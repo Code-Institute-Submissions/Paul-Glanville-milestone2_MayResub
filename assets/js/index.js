@@ -136,6 +136,9 @@ function setupTileClickListener() {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = '#62b6cb';
                 }, 1500);
+                setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
+                    alert("Congratulations! next round, Get ready!");
+                }, (index === currentTilePlaces.length));
             } else {
                 setTimeout(() => { /* changes the colour of the tiles after a certain amount of time */
                     clickElement.style.backgroundColor = 'red';
@@ -146,16 +149,16 @@ function setupTileClickListener() {
                 }, 1500);
             }
         
-            currentTilePlaces = setTimeout(() => {
-                if(currentIndex == (currentTilePlaces.length.alert("Congratulations! next round, Get ready!"))) { // display string message
-                    move(currentIndex +1);
-                } else {
-                    move(0);
-                }
-            });
+            //setTimeout(() => {
+            //    if(currentIndex === (currentTilePlaces.length)) { 
+            //        move(currentIndex + 1);
+            //    } else {
+            //        move();
+            //    }
+            //});
         }
         let tiles = event.tiles;
-        
+        // alert("Congratulations! next round, Get ready!")  // display string message
         
     });
 };
